@@ -1,7 +1,42 @@
 body {
   font-family: "Manrope", sans-serif !important;
 }
+/* fondo para el tema oscuro */
 
+[data-bs-theme="dark"] body {
+  background-color: #0b0f19 !important;
+}
+
+[data-bs-theme="dark"] .dropdown-menu {
+  background-color: #0b0f19 !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-bs-theme="dark"] .dropdown-item:hover,
+[data-bs-theme="dark"] .dropdown-item:focus {
+  background-color: #1a1e27 !important;
+  color: #fff !important;
+}
+
+/* --- Navbar --- */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #6366f1 !important;
+}
+
+/* Si el botón toggle de la navbar (hamburguesa) tiene un estado focus o active */
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25) !important;
+}
+
+/* Estilos para el elemento activo dentro del dropdown */
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #6366f1 !important;
+  color: #fff !important;
+}
+
+/* --- Botones --- */
 .btn-primary {
   background-color: #6366f1 !important;
   border-color: #6366f1 !important;
@@ -30,20 +65,4 @@ body {
   border-color: #6366f1 !important;
   color: #fff !important;
   opacity: 0.65 !important;
-}
-/* Estilos para el elemento activo dentro del dropdown */
-.dropdown-item.active,
-.dropdown-item:active {
-  background-color: #6366f1 !important;
-  color: #fff !important;
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-  color: #6366f1 !important;
-}
-
-/* Si el botón toggle de la navbar (hamburguesa) tiene un estado focus o active */
-.navbar-toggler:focus {
-  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25) !important;
 }
