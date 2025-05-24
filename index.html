@@ -51,7 +51,88 @@
     <title>Cheatsheet</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-transparent navbar-sticky">
+        <div class="container">
+          <a class="navbar-brand" href="#">Cheatsheet</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/cheatsheet-html.html">HTML</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/cheatsheet-css.html">CSS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/cheatsheet-css.html">JS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/aboutme.html">Acerca de</a>
+              </li>
+            </ul>
+            <!-- <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Buscar
+              </button>
+            </form> -->
+            <div class="theme-switcher dropdown">
+              <button
+                class="btn btn-link nav-link px-0 px-lg-2 py-2 dropdown-toggle d-flex align-items-center"
+                type="button"
+                data-bs-toggle="dropdown"
+              >
+                <i class="bi bi-circle-half"></i>
+              </button>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+              >
+                <li>
+                  <button
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="auto"
+                  >
+                    <i class="bi bi-circle-half me-2 opacity-50"></i> Auto
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="light"
+                  >
+                    <i class="bi bi-sun me-2 opacity-50"></i> Claro
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="dark"
+                  >
+                    <i class="bi bi-moon me-2 opacity-50"></i> Oscuro
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
     <main></main>
     <footer></footer>
     <script
@@ -59,5 +140,6 @@
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
       crossorigin="anonymous"
     ></script>
+    <script src="./src/app.js"></script>
   </body>
 </html>
