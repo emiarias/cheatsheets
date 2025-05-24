@@ -1,3 +1,7 @@
+body {
+    font-family: 'Manrope', sans-serif !important; /* 'Manrope' es tu fuente, 'sans-serif' es el fallback */
+}
+
 .btn-primary {
   background-color: #6366f1 !important;
   border-color: #6366f1 !important;
