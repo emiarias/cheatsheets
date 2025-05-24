@@ -1,11 +1,11 @@
 body {
-    font-family: 'Manrope', sans-serif !important; /* 'Manrope' es tu fuente, 'sans-serif' es el fallback */
+  font-family: "Manrope", sans-serif !important;
 }
 
 .btn-primary {
   background-color: #6366f1 !important;
   border-color: #6366f1 !important;
-  color: #fff !important; 
+  color: #fff !important;
 }
 
 .btn-primary:hover {
@@ -22,7 +22,7 @@ body {
 }
 
 .btn-primary:focus {
-  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.5) !important; 
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.5) !important;
 }
 
 .btn-primary:disabled {
@@ -34,13 +34,13 @@ body {
 /* Estilos para el elemento activo dentro del dropdown */
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: #6366f1 !important; 
-  color: #fff !important; 
+  background-color: #6366f1 !important;
+  color: #fff !important;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-    color: #6366f1 !important; 
+  color: #6366f1 !important;
 }
 
 /* Si el botón toggle de la navbar (hamburguesa) tiene un estado focus o active */
