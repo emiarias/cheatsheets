@@ -1,0 +1,45 @@
+.btn-primary {
+  background-color: #6366f1 !important;
+  border-color: #6366f1 !important;
+  color: #fff !important; 
+}
+
+.btn-primary:hover {
+  background-color: #4044ee !important;
+  border-color: #4044ee !important;
+  color: #fff !important;
+}
+
+.btn-primary:active {
+  background-color: #4044ee !important;
+  border-color: #4044ee !important;
+  color: #fff !important;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) !important;
+}
+
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.5) !important; 
+}
+
+.btn-primary:disabled {
+  background-color: #6366f1 !important;
+  border-color: #6366f1 !important;
+  color: #fff !important;
+  opacity: 0.65 !important;
+}
+/* Estilos para el elemento activo dentro del dropdown */
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #6366f1 !important; 
+  color: #fff !important; 
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #6366f1 !important; 
+}
+
+/* Si el botón toggle de la navbar (hamburguesa) tiene un estado focus o active */
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25) !important;
+}
