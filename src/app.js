@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Elementos del DOM
   const themeIcon = document.getElementById("theme-icon");
   const dropdownItems = document.querySelectorAll(".dropdown-item[data-bs-theme-value]");
+   const prismThemeLink = document.getElementById("prism-theme-link"); // Obtén el enlace de Prism
+
   
   // Detectar tema del sistema
   const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
@@ -35,7 +37,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // 3. Aplicar tema efectivo
     const effectiveTheme = selectedTheme === "auto" ? systemTheme : selectedTheme;
     document.documentElement.setAttribute("data-bs-theme", effectiveTheme);
+
+    // 4. Cambiar la hoja de estilos de Prism.js
+    if (prismThemeLink) {
+      if (effectiveTheme === "dark") {
+        prismThemeLink.href = "../css/prism.css"; // Tu tema oscuro de Prism
+      } else { // light o auto (si el sistema es light)
+        prismThemeLink.href = "../css/prism-default.css"; // Tu tema claro de Prism
+      }
+    }
+
+    // Opcional: Re-resaltar el código si los bloques ya estaban cargados
+    // Esto es útil si el código ya era visible antes de cambiar el tema
+    if (window.Prism) { // Verifica si Prism está disponible
+      Prism.highlightAll();
+    }
   }
+  
 });
 
 document.addEventListener('DOMContentLoaded', function() {
