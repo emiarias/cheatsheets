@@ -131,11 +131,11 @@
       </nav>
     </header>
     <main class="container my-4">
-      <h1></h1>
-      <section class="row gap-3">
+      <h1>Cheatsheet de HTML</h1>
+      <section class="row row-gap-3">
         <!-- Estructura html -->
-        <div class="col-12">
-          <div class="card">
+        <div class="col-md-6">
+          <div class="card h-100">
             <div class="card-header"><h3 class="fs-6">🧩Sintaxis HTML</h3></div>
             <div class="card-body">
               <code class="language-html"
@@ -145,9 +145,16 @@
             </div>
           </div>
         </div>
+        <!-- Estructura html -->
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-header"><h3 class="fs-6">🧩Descargas</h3></div>
+            <div class="card-body">aqui agregare recursos para descargar</div>
+          </div>
+        </div>
         <!-- Estructura básica  -->
-        <div class="col-md-4">
-          <div class="card my-3">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
             <div
               class="card-header d-flex justify-content-between align-items-center"
             >
@@ -164,12 +171,10 @@
               </button>
             </div>
             <div class="card-body">
-              <pre>
-              <code class="language-html code-snippet">
-&lt;!DOCTYPE html&gt;
+              <pre><code class="language-html code-snippet">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
-  &lt;meta charset="UTF-8" /&gt;
+   &lt;meta charset="UTF-8" /&gt;
   &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
   &lt;title&gt;Título de la página&lt;/title&gt;
@@ -177,36 +182,196 @@
 &lt;body&gt;
 &lt;!-- Contenido visible va aquí --&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-              </code>
-              </pre>
+&lt;/html&gt;</code></pre>
             </div>
             <div class="card-footer">
-              <a href="#" class="link-secondary">Mas información</a>
+              <a
+                href="https://developer.mozilla.org/es/docs/Learn_web_development/Core/Structuring_content/Structuring_documents"
+                target="_blank"
+                class="link-secondary"
+                >Mas información</a
+              >
             </div>
           </div>
         </div>
-        <!-- ejemplo 2 -->
-        <div class="col-md-4 mb-4">
-          <div class="card my-3">
+        <!-- Etiquetas metas -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
             <div
               class="card-header d-flex justify-content-between align-items-center"
             >
-              <h5 class="mb-0">Heading Tags</h5>
-              <button class="btn btn-purple copy-code-btn">Copy code</button>
+              <h3 class="mb-0 fs-6">🌐 Meta Tags Esenciales & Enlaces</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
             </div>
-            <div class="card-body">
-              <pre><code class="language-html code-snippet">
-&lt;h1&gt;This is a Heading 1&lt;/h1&gt;
-&lt;h2&gt;This is a Heading 2&lt;/h2&gt;
-&lt;h3&gt;This is a Heading 3&lt;/h3&gt;
-&lt;h4&gt;This is a Heading 4&lt;/h4&gt;
-&lt;h5&gt;This is a Heading 5&lt;/h5&gt;
-&lt;h6&gt;This is a Heading 6&lt;/h6&gt;
-    </code></pre>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content="Una descripción concisa."&gt;
+&lt;meta name="keywords" content="html, css, js"&gt;
+&lt;title&gt;Mi Página&lt;/title&gt;
+
+&lt;link rel="stylesheet" href="ruta/a/estilos.css"&gt;
+&lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;</code></pre>
             </div>
             <div class="card-footer">
-              <a href="#" class="card-link">More info: HTML Headings</a>
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Element/head"
+                target="_blank"
+                class="link-secondary"
+                >Más información: &lt;head&gt;</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Contenedores  -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">🧱 Contenedores y organización</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body">
+              <pre><code class="language-html code-snippet">&lt;header&gt;Encabezado&lt;/header&gt;
+&lt;main&gt;Contenido principal&lt;/main&gt;
+&lt;footer&gt;Pie de página &lt;/footer&gt;
+&lt;nav&gt;Menú de navegación&lt;/nav&gt;
+&lt;div&gt;Bloque genérico &lt;/div&gt;
+&lt;section&gt;Sección &lt;/section&gt;
+&lt;article&gt;Artículo independiente&lt;/article&gt;
+&lt;aside&gt;Contenido lateral&lt;/aside&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Learn_web_development/Core/Structuring_content/Structuring_documents"
+                target="_blank"
+                class="link-secondary"
+                >Mas información</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Encabezados y Párrafos  -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">📝 Encabezados y Párrafos</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">&lt;h1&gt;Título Principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo Nivel 2&lt;/h2&gt;
+&lt;h3&gt;Subtítulo Nivel 3&lt;/h3&gt;
+&lt;h4&gt;Subtítulo Nivel 4&lt;/h4&gt;
+&lt;h5&gt;Subtítulo Nivel 5&lt;/h5&gt;
+&lt;h6&gt;Subtítulo Nivel 6&lt;/h6&gt;
+
+&lt;p&gt;Este es un párrafo de texto.
+  &lt;br&gt;Aquí hay un salto de línea.&lt;/p&gt;
+&lt;hr&gt; &lt;!-- Línea temática --&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Element/Heading_Elements"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Texto</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Formato y Énfasis de Texto  -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">✨ Formato y Énfasis de Texto</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">&lt;p&gt;&lt;strong&gt;Texto semanticamente importante&lt;/strong&gt; &lt;b&gt;negrita&lt;/b&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Énfasis&lt;/em&gt; &lt;i&gt;cursiva&lt;/i&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;Texto resaltado&lt;/mark&gt;. &lt;small&gt;Texto pequeño&lt;/small&gt;.&lt;/p&gt;
+&lt;p&gt;Código: &lt;code&gt;console.log("Hola");&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Bloque de código
+con varias líneas.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Fórmula H&lt;sub&gt;2&lt;/sub&gt;O, potencia 2&lt;sup&gt;3&lt;/sup&gt;.&lt;/p&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Element#text_content"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Formato</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Citas y Semántica de Contenido  -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">🗣️ Citas y Semántica de Contenido</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">&lt;blockquote cite="http://www.example.com/quote"&gt;
+  &lt;p&gt;Este es un bloque de cita.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Me dijo: &lt;q&gt;Hola mundo&lt;/q&gt;.&lt;/p&gt;
+&lt;p&gt;La &lt;abbr title="Organización Mundial de la Salud"&gt;OMS&lt;/abbr&gt;.&lt;/p&gt;
+&lt;address&gt;
+  Escrito por &lt;a href="mailto:ejemplo@email.com"&gt;John Doe&lt;/a&gt;.
+&lt;/address&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Element#text_content"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Citas</a
+              >
             </div>
           </div>
         </div>
@@ -217,9 +382,11 @@
         Recursos de HTML, CSS y JavaScript creados para estudiantes y
         autodidactas.
       </p>
-      <Cheatsheets>
+      <p>
         <span class="text-muted">© 2025 Todos los derechos reservados.</span>
-        <a href="https://github.com/emiarias" class="link-secondary">Cheatsheets by Emilse Arias</a>
+        <a href="https://github.com/emiarias" class="link-secondary"
+          >Cheatsheets by Emilse Arias</a
+        >
       </p>
     </footer>
     <script
