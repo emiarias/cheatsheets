@@ -48,6 +48,7 @@
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../css/prism.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
@@ -137,7 +138,7 @@
           <div class="card">
             <div class="card-header"><h3 class="fs-6">🧩Sintaxis HTML</h3></div>
             <div class="card-body">
-              <code
+              <code class="language-html"
                 >&lt;elemento atributo = "valor"&gt; contenido
                 &lt;/elemento&gt;</code
               >
@@ -153,12 +154,12 @@
               <h3 class="mb-0 fs-6">
                 📌 Estructura básica de un documento HTML
               </h3>
-              <button class="btn btn-primary copy-code-btn">
+              <button class="btn btn-outline-primary copy-code-btn" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copiar">
                 <i class="bi bi-copy"></i>
               </button>
             </div>
             <div class="card-body bg-dark text-white">
-              <pre><code class="code-snippet">
+              <pre><code class="language-html code-snippet">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
@@ -188,7 +189,7 @@
               <button class="btn btn-purple copy-code-btn">Copy code</button>
             </div>
             <div class="card-body bg-dark text-white">
-              <pre><code class="code-snippet">
+              <pre><code class="language-html code-snippet">
 &lt;h1&gt;This is a Heading 1&lt;/h1&gt;
 &lt;h2&gt;This is a Heading 2&lt;/h2&gt;
 &lt;h3&gt;This is a Heading 3&lt;/h3&gt;
@@ -337,5 +338,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../src/app.js"></script>
+    <script src="../src/prism.js"></script>
   </body>
 </html>

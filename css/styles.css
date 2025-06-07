@@ -5,8 +5,8 @@ body {
   min-height: 100vh;
 }
 
-main{
-    flex: 1 0 auto;
+main {
+  flex: 1 0 auto;
 }
 /* fondo para el tema oscuro */
 
@@ -49,8 +49,17 @@ main{
   border-color: #6366f1 !important;
   color: #fff !important;
 }
+.btn-outline-primary {
+  border-color: #6366f1 !important;
+  color: #6366f1 !important;
+}
 
 .btn-primary:hover {
+  background-color: #4044ee !important;
+  border-color: #4044ee !important;
+  color: #fff !important;
+}
+.btn-outline-primary:hover {
   background-color: #4044ee !important;
   border-color: #4044ee !important;
   color: #fff !important;
@@ -74,12 +83,12 @@ main{
   opacity: 0.65 !important;
 }
 
- /* Estilos personalizados para el botón */
-  .btn-purple {
-    background-color: #8a2be2; /* Un tono de púrpura */
-    color: white;
-  }
-  .btn-purple:hover {
-    background-color: #6a1fa6; /* Un tono más oscuro al pasar el ratón */
-    color: white;
-  }
+/* Estilos personalizados para el botón */
+.btn-purple {
+  background-color: #8a2be2; /* Un tono de púrpura */
+  color: white;
+}
+.btn-purple:hover {
+  background-color: #6a1fa6; /* Un tono más oscuro al pasar el ratón */
+  color: white;
+}
