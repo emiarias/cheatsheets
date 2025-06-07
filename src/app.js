@@ -37,3 +37,26 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.setAttribute("data-bs-theme", effectiveTheme);
   }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const copyButtons = document.querySelectorAll('.copy-code-btn');
+
+  copyButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const cardBody = this.closest('.card-header').nextElementSibling;
+      const codeSnippetElement = cardBody.querySelector('.code-snippet');
+      const codeSnippet = codeSnippetElement.innerText;
+
+      navigator.clipboard.writeText(codeSnippet).then(() => {
+        const originalText = this.children[0].className;
+        this.children[0].className ='bi bi-check-lg';
+        setTimeout(() => {
+          this.children[0].className = originalText;
+        }, 2000); 
+      }).catch(err => {
+        console.error('Error al copiar el código: ', err);
+        alert('Hubo un error al copiar el código. Por favor, inténtalo de nuevo.');
+      });
+    });
+  });
+});

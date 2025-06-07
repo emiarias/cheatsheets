@@ -73,3 +73,13 @@ main{
   color: #fff !important;
   opacity: 0.65 !important;
 }
+
+ /* Estilos personalizados para el botón */
+  .btn-purple {
+    background-color: #8a2be2; /* Un tono de púrpura */
+    color: white;
+  }
+  .btn-purple:hover {
+    background-color: #6a1fa6; /* Un tono más oscuro al pasar el ratón */
+    color: white;
+  }
