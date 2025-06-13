@@ -1,8 +1,11 @@
+import { htmlCheatsheetData } from './data.js'; // Importa tus datos
+
 document.addEventListener("DOMContentLoaded", () => {
   // Elementos del DOM
   const themeIcon = document.getElementById("theme-icon");
   const dropdownItems = document.querySelectorAll(".dropdown-item[data-bs-theme-value]");
    const prismThemeLink = document.getElementById("prism-theme-link"); // Obtén el enlace de Prism
+  const cardsContainer = document.getElementById("cards-container"); // Nuevo: Contenedor para las cards
 
   
   // Detectar tema del sistema
@@ -54,6 +57,90 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   
+  // Función para crear una card
+  function createCard(data) {
+    const colDiv = document.createElement("div");
+    colDiv.className = data.colClasses; //
+    colDiv.id = data.id; // Asigna el ID para posibles anclajes
+
+    const cardDiv = document.createElement("div");
+    cardDiv.className = "card h-100";
+
+    // Card Header
+    const cardHeader = document.createElement("div");
+    cardHeader.className = "card-header d-flex justify-content-between align-items-center";
+    cardHeader.innerHTML = `<h3 class="mb-0 fs-6">${data.headerIcon} ${data.headerTitle}</h3>`;
+
+    // Botón de copiar (solo si hay código)
+    if (data.codeSnippet) {
+      const copyButton = document.createElement("button");
+      copyButton.className = "btn btn-outline-primary copy-code-btn";
+      copyButton.setAttribute("data-bs-toggle", "tooltip");
+      copyButton.setAttribute("data-bs-placement", "top");
+      copyButton.setAttribute("data-bs-title", "Copiar");
+      copyButton.innerHTML = '<i class="bi bi-copy"></i>';
+      cardHeader.appendChild(copyButton);
+    }
+
+    cardDiv.appendChild(cardHeader);
+
+    // Card Body
+    const cardBody = document.createElement("div");
+    cardBody.className = "card-body";
+
+    if (data.codeSnippet) { // Si tiene un bloque de código
+      const preElement = document.createElement("pre");
+      const codeElement = document.createElement("code");
+      codeElement.className = `language-${data.codeLanguage} code-snippet`; //
+      codeElement.innerHTML = data.codeSnippet; // Asigna el código (ya codificado como entidades HTML)
+      preElement.appendChild(codeElement);
+      cardBody.appendChild(preElement);
+    } else if (data.bodyContent) { // Si tiene contenido HTML directo
+        cardBody.innerHTML = data.bodyContent;
+    }
+
+    if (data.bodyText) { // Si tiene texto adicional en el body
+      const pElement = document.createElement("p");
+      pElement.className = "card-text small text-muted mb-2";
+      pElement.textContent = data.bodyText;
+      cardBody.appendChild(pElement);
+    }
+    cardDiv.appendChild(cardBody);
+
+    // Card Footer (solo si hay link)
+    if (data.footerLink) {
+      const cardFooter = document.createElement("div");
+      cardFooter.className = "card-footer";
+      const linkElement = document.createElement("a");
+      linkElement.href = data.footerLink.href;
+      linkElement.target = "_blank";
+      linkElement.className = "link-secondary";
+      linkElement.textContent = data.footerLink.text;
+      cardFooter.appendChild(linkElement);
+      cardDiv.appendChild(cardFooter);
+    }
+
+    colDiv.appendChild(cardDiv);
+    return colDiv;
+  }
+ // Cargar las cards al inicio
+  if (cardsContainer) {
+    htmlCheatsheetData.forEach(cardData => {
+      const cardElement = createCard(cardData);
+      cardsContainer.appendChild(cardElement);
+    });
+    // Re-inicializar tooltips después de agregar nuevas cards
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
+    // Re-inicializar Prism.js después de agregar las cards
+    if (window.Prism) {
+      Prism.highlightAll();
+    }
+  }
+
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -79,9 +166,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+//     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+//         return new bootstrap.Tooltip(tooltipTriggerEl)
+//     })
+// });
