@@ -174,7 +174,7 @@
               <pre><code class="language-html code-snippet">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
-   &lt;meta charset="UTF-8" /&gt;
+  &lt;meta charset="UTF-8" /&gt;
   &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt;
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
   &lt;title&gt;Título de la página&lt;/title&gt;
@@ -219,6 +219,11 @@
 
 &lt;link rel="stylesheet" href="ruta/a/estilos.css"&gt;
 &lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;</code></pre>
+              <p class="card-text small text-muted mb-2">
+                Las meta etiquetas proporcionan información crucial sobre tu
+                página, como la codificación de caracteres, la descripción y el
+                viewport. También se incluyen enlaces a CSS.
+              </p>
             </div>
             <div class="card-footer">
               <a
@@ -247,14 +252,18 @@
               </button>
             </div>
             <div class="card-body">
-              <pre><code class="language-html code-snippet">&lt;header&gt;Encabezado&lt;/header&gt;
-&lt;main&gt;Contenido principal&lt;/main&gt;
-&lt;footer&gt;Pie de página &lt;/footer&gt;
-&lt;nav&gt;Menú de navegación&lt;/nav&gt;
-&lt;div&gt;Bloque genérico &lt;/div&gt;
-&lt;section&gt;Sección &lt;/section&gt;
-&lt;article&gt;Artículo independiente&lt;/article&gt;
-&lt;aside&gt;Contenido lateral&lt;/aside&gt;</code></pre>
+              <pre><code class="language-html code-snippet">&lt;header&gt;Encabezado&lt;/header&gt; &lt;!-- Semántica --&gt;
+&lt;main&gt;Contenido principal&lt;/main&gt; &lt;!-- Semántica --&gt;
+&lt;footer&gt;Pie de página &lt;/footer&gt; &lt;!-- Semántica --&gt;
+&lt;nav&gt;Menú de navegación&lt;/nav&gt; &lt;!-- Semántica --&gt;
+&lt;div&gt;Bloque genérico &lt;/div&gt; &lt;!-- No semántica --&gt;
+&lt;section&gt;Sección &lt;/section&gt; &lt;!-- Semántica --&gt;
+&lt;article&gt;Artículo independiente&lt;/article&gt; &lt;!-- Semántica --&gt;
+&lt;aside&gt;Contenido lateral&lt;/aside&gt; &lt;!-- Semántica --&gt;</code></pre> 
+<p class="card-text small text-muted mb-2">
+                Usa estas etiquetas para organizar tu contenido de forma
+                semántica y mejorar la estructura de tu documento.
+              </p>
             </div>
             <div class="card-footer">
               <a
@@ -291,8 +300,11 @@
 &lt;h6&gt;Subtítulo Nivel 6&lt;/h6&gt;
 
 &lt;p&gt;Este es un párrafo de texto.
-  &lt;br&gt;Aquí hay un salto de línea.&lt;/p&gt;
-&lt;hr&gt; &lt;!-- Línea temática --&gt;</code></pre>
+&lt;br&gt;Aquí hay un salto de línea.&lt;/p&gt;</code></pre>
+  <p class="card-text small text-muted mb-2">
+                Define la jerarquía de tus títulos (h1 es el más importante) y
+                estructura el texto en párrafos.
+              </p>
             </div>
             <div class="card-footer">
               <a
@@ -328,14 +340,19 @@
 &lt;pre&gt;&lt;code&gt;Bloque de código
 con varias líneas.&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Fórmula H&lt;sub&gt;2&lt;/sub&gt;O, potencia 2&lt;sup&gt;3&lt;/sup&gt;.&lt;/p&gt;</code></pre>
+<p class="card-text small text-muted mb-2">
+                Aplica estilos de texto como negrita, cursiva, resaltado y
+                muestra bloques de código con estas etiquetas.
+              </p>
             </div>
-            <div class="card-footer">
+            <div class="card-footer d-flex justify-content-between">
               <a
                 href="https://developer.mozilla.org/es/docs/Web/HTML/Element#text_content"
                 target="_blank"
                 class="link-secondary"
                 >Más información: Formato</a
               >
+              <button class="btn btn-outline-primary">ver</button>
             </div>
           </div>
         </div>
@@ -371,6 +388,517 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
                 target="_blank"
                 class="link-secondary"
                 >Más información: Citas</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- todo: verificar -->
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">🔗 Enlaces (Hyperlinks)</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">
+&lt;a href="https://ejemplo.com"&gt;Visitar Ejemplo&lt;/a&gt;
+&lt;a href="pagina.html"&gt;Ir a Página Interna&lt;/a&gt;
+&lt;a href="https://ejemplo.com" target="_blank" rel="noopener noreferrer"&gt;
+  Abrir en nueva pestaña
+&lt;/a&gt;
+&lt;a href="#seccion"&gt;Ir a sección en esta página&lt;/a&gt;
+&lt;a href="mailto:email@example.com"&gt;Enviar Email&lt;/a&gt;
+&lt;a href="tel:+123456789"&gt;Llamar&lt;/a&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Element/a"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Enlaces</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">🖼️ Imágenes</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">
+&lt;img src="ruta/imagen.jpg" alt="Descripción de la imagen"&gt;
+&lt;img src="logo.png" alt="Logo" width="100" height="50"&gt;
+
+&lt;figure&gt;
+  &lt;img src="ruta/foto.jpg" alt="Persona"&gt;
+  &lt;figcaption&gt;Una persona sonriendo.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Element/img"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Imágenes</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">📋 Listas No Ordenadas</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">
+&lt;ul&gt;
+  &lt;li&gt;Elemento uno&lt;/li&gt;
+  &lt;li&gt;Elemento dos&lt;/li&gt;
+  &lt;li&gt;Elemento tres&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Element/ul"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Listas</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">🔢 Listas Ordenadas</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">
+&lt;ol&gt;
+  &lt;li&gt;Primer paso&lt;/li&gt;
+  &lt;li&gt;Segundo paso&lt;/li&gt;
+  &lt;li&gt;Tercer paso&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol type="A" start="3"&gt;
+  &lt;li&gt;Paso C&lt;/li&gt;
+  &lt;li&gt;Paso D&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Element/ol"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Listas Ordenadas</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">📚 Listas de Definiciones</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Lenguaje de Marcado de Hipertexto.&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Hojas de Estilo en Cascada.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Element/dl"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Listas de Definiciones</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">📊 Tablas HTML</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">
+&lt;table class="table"&gt;
+  &lt;caption&gt;Datos de Usuarios&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Apellido&lt;/th&gt;
+      &lt;th&gt;Email&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Juan&lt;/td&gt;
+      &lt;td&gt;Pérez&lt;/td&gt;
+      &lt;td&gt;juan@example.com&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2"&gt;Juan Pablo&lt;/td&gt;
+      &lt;td rowspan="2"&gt;contacto@example.com&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Otro&lt;/td&gt;
+      &lt;td&gt;Dato&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td colspan="3"&gt;Total de usuarios: 2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Element/table"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Tablas</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">📝 Estructura Básica de Formularios</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">
+&lt;form action="/submit-form" method="POST"&gt;
+  &lt;label for="username"&gt;Usuario:&lt;/label&gt;
+  &lt;input type="text" id="username" name="username" required&gt;
+
+  &lt;label for="password"&gt;Contraseña:&lt;/label&gt;
+  &lt;input type="password" id="password" name="password" placeholder="Min. 8 caracteres"&gt;
+
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+  &lt;button type="reset"&gt;Limpiar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Element/form"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Formularios</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">📋 Tipos de Input y Otros Controles</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">
+&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email"&gt;
+
+&lt;label for="qty"&gt;Cantidad:&lt;/label&gt;
+&lt;input type="number" id="qty" min="1" max="10" value="1"&gt;
+
+&lt;input type="checkbox" id="agree"&gt;
+&lt;label for="agree"&gt;Acepto términos&lt;/label&gt;
+
+&lt;input type="radio" id="male" name="gender" value="male"&gt;
+&lt;label for="male"&gt;Masculino&lt;/label&gt;
+
+&lt;label for="comments"&gt;Comentarios:&lt;/label&gt;
+&lt;textarea id="comments" rows="3"&gt;&lt;/textarea&gt;
+
+&lt;label for="country"&gt;País:&lt;/label&gt;
+&lt;select id="country"&gt;
+  &lt;option value="ar"&gt;Argentina&lt;/option&gt;
+  &lt;option value="mx"&gt;México&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Element/Input"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Inputs</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">🎵 Audio y Vídeo</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">
+&lt;audio controls loop autoplay muted&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  Tu navegador no soporta audio.
+&lt;/audio&gt;
+
+&lt;video controls width="300" height="200" poster="preview.jpg"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  Tu navegador no soporta video.
+&lt;/video&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Media_elements"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Media</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">🖥️ Iframes (Contenido Externo)</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">
+&lt;iframe 
+  src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+  width="560" 
+  height="315" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen&gt;
+&lt;/iframe&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Element/iframe"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Iframes</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">⚙️ Atributos Globales Comunes</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">
+&lt;div id="miElemento"&gt;&lt;/div&gt; &lt;!-- ID único --&gt;
+&lt;p class="destacado texto-centrado"&gt;&lt;/p&gt; &lt;!-- Clases para CSS/JS --&gt;
+&lt;span style="color: red; font-weight: bold;"&gt;&lt;/span&gt; &lt;!-- Estilos en línea --&gt;
+&lt;button title="Haz clic aquí"&gt;Botón&lt;/button&gt; &lt;!-- Tooltip genérico --&gt;
+&lt;input type="text" tabindex="1"&gt; &lt;!-- Orden de tabulación --&gt;
+&lt;div data-custom-id="valor"&gt;&lt;/div&gt; &lt;!-- Atributos de datos --&gt;
+</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/HTML/Global_attributes"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Atributos</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">📝 Entidades HTML Comunes</h3>
+              <button
+                class="btn btn-outline-primary copy-code-btn"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                data-bs-title="Copiar"
+              >
+                <i class="bi bi-copy"></i>
+              </button>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">
+&amp;lt;  &lt;!-- Menor que (&lt;) --&gt;
+&amp;gt;  &lt;!-- Mayor que (&gt;) --&gt;
+&amp;amp; &lt;!-- Ampersand (&amp;) --&gt;
+&amp;quot; &lt;!-- Comillas dobles (") --&gt;
+&amp;apos; &lt;!-- Apóstrofe (') --&gt;
+&amp;nbsp; &lt;!-- Espacio sin ruptura --&gt;
+&amp;copy; &lt;!-- Símbolo de copyright (©) --&gt;
+&amp;reg; &lt;!-- Símbolo de marca registrada (®) --&gt;
+&amp;euro; &lt;!-- Símbolo de Euro (€) --&gt;</code></pre>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Glossary/HTML_entity"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Entidades</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div
+              class="card-header d-flex justify-content-between align-items-center"
+            >
+              <h3 class="mb-0 fs-6">♿ Accesibilidad y Semántica Básica</h3>
+            </div>
+            <div class="card-body bg-dark text-white">
+              <pre><code class="language-html code-snippet">
+&lt;img src="foto.jpg" alt="Persona sonriendo."&gt; &lt;!-- Alt text crucial --&gt;
+&lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+&lt;input type="text" id="nombre"&gt; &lt;!-- Label asociado a input --&gt;
+
+&lt;nav&gt;...&lt;/nav&gt; &lt;!-- Usar etiquetas semánticas --&gt;
+&lt;h1&gt;Título&lt;/h1&gt; &lt;h2&gt;Subtítulo&lt;/h2&gt; &lt;!-- Jerarquía de títulos --&gt;
+</code></pre>
+              <p class="small text-muted mt-2">
+                La accesibilidad es fundamental para que todos puedan usar tu
+                web.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a
+                href="https://developer.mozilla.org/es/docs/Web/Accessibility"
+                target="_blank"
+                class="link-secondary"
+                >Más información: Accesibilidad</a
               >
             </div>
           </div>
