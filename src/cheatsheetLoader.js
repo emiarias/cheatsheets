@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Card Body
     const cardBody = document.createElement("div");
-    cardBody.className = "card-body bg-dark text-white";
+    cardBody.className = "card-body";
 
     // Inserta el snippet de código si existe
     if (data.codeSnippet !== null) {
