@@ -57,7 +57,7 @@ export const htmlCheatsheetData = [
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
-      section: "Estructura Avanzada", // Nueva propiedad
+      section: "Estructura", // Nueva propiedad
     order: 2, // Nueva propiedad
   },
   {
@@ -80,7 +80,7 @@ export const htmlCheatsheetData = [
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
-      section: "Estructura Avanzada", // Nueva propiedad
+      section: "Estructura", // Nueva propiedad
     order: 2, // Nueva propiedad
   },
   {
