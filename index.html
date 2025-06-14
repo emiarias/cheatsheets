@@ -36,6 +36,24 @@
   connect-src 'self';
 "
     /> -->
+    <script>
+        (function() {
+            const getSystemTheme = () => {
+                if (window.matchMedia) {
+                    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                }
+                return 'light'; 
+            };
+            const savedTheme = localStorage.getItem("theme") || "auto";
+            const effectiveTheme = savedTheme === "auto" ? getSystemTheme() : savedTheme;
+            document.documentElement.setAttribute("data-bs-theme", effectiveTheme);
+            const prismThemeLink = document.createElement('link');
+            prismThemeLink.id = 'prism-theme-link'; 
+            prismThemeLink.rel = 'stylesheet';
+            prismThemeLink.href = effectiveTheme === "dark" ? "./css/prism.css" : "./css/prism-default.css";
+            document.head.appendChild(prismThemeLink);
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -80,7 +98,7 @@
                 <a class="nav-link" href="./pages/page-html.html">CSS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/cheatsheet-css.html">JS</a>
+                <a class="nav-link" href="./pages/cheatsheet-js.html">JS</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./pages/aboutme.html">Acerca de</a>
