@@ -14,6 +14,8 @@ export const htmlCheatsheetData = [
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
+      section: "Fundamentos", // Nueva propiedad
+    order: 1, // Nueva propiedad
   },
   {
     id: "descargas",
@@ -28,6 +30,8 @@ export const htmlCheatsheetData = [
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
+      section: "Fundamentos", // Nueva propiedad
+    order: 1, // Nueva propiedad
   },
   {
     id: "estructura-basica",
@@ -53,6 +57,8 @@ export const htmlCheatsheetData = [
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
+      section: "Estructura Avanzada", // Nueva propiedad
+    order: 2, // Nueva propiedad
   },
   {
     id: "meta-tags",
@@ -74,6 +80,8 @@ export const htmlCheatsheetData = [
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
+      section: "Estructura Avanzada", // Nueva propiedad
+    order: 2, // Nueva propiedad
   },
   {
     id: "meta-tags",
@@ -95,5 +103,7 @@ export const htmlCheatsheetData = [
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
+      section: "Otros", // Nueva propiedad
+    order: 3, // Nueva propiedad
   },
 ];

@@ -1,8 +1,7 @@
 // js/cheatsheetLoader.js
-// Maneja la carga dinámica de las cards de cheatsheet y sus funcionalidades interactivas.
 
 import { htmlCheatsheetData } from "./htmlData.js";
-import { jsCheatsheetData } from "./jsData.js"; // Importa los datos de JS
+import { jsCheatsheetData } from "./jsData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const cardsContainer = document.getElementById("cards-container");
@@ -23,9 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (currentPagePath.includes("/cheatsheet-js.html")) {
     dataToLoad = jsCheatsheetData;
   }
-  // Puedes agregar más condiciones para otras páginas de cheatsheet aquí
 
-  // Función para crear una card (misma lógica que ya hemos refinado)
+  // Función para crear una card (sin cambios, ya la tienes bien)
   function createCard(data) {
     const colDiv = document.createElement("div");
     colDiv.className = data.colClasses;
@@ -120,8 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
         videoButton.setAttribute("data-bs-placement", "top");
         videoButton.setAttribute("data-bs-title", "Ver Video");
         videoButton.innerHTML = '<i class="bi bi-play-fill"></i>';
-        // Agrega un event listener si necesitas una acción específica, por ejemplo:
-        // videoButton.addEventListener('click', () => alert(`Reproduciendo video: ${data.footerVideo}`));
         buttonsContainer.appendChild(videoButton);
       }
 
@@ -133,8 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
         previewButton.setAttribute("data-bs-placement", "top");
         previewButton.setAttribute("data-bs-title", "Ver Previsualización");
         previewButton.innerHTML = '<i class="bi bi-image"></i>';
-        // Agrega un event listener si necesitas una acción específica, por ejemplo:
-        // previewButton.addEventListener('click', () => alert(`Mostrando previsualización: ${data.footerPreview}`));
         buttonsContainer.appendChild(previewButton);
       }
 
@@ -162,27 +156,83 @@ document.addEventListener("DOMContentLoaded", () => {
     return colDiv;
   }
 
-  // Cargar las cards al contenedor
+  // --- Lógica para agrupar y cargar las cards por sección ---
+  const sections = {};
+
+  // Agrupar las tarjetas por sección
   dataToLoad.forEach((cardData) => {
-    const cardElement = createCard(cardData);
-    cardsContainer.appendChild(cardElement);
-    let cont = 1;
-    console.log(cont++);
+    const sectionName = cardData.section || "Sin Sección"; // Usa "Sin Sección" si la propiedad no existe
+    const sectionOrder = cardData.order || 999; // Un número alto para secciones sin orden
+
+    if (!sections[sectionName]) {
+      sections[sectionName] = {
+        order: sectionOrder,
+        cards: [],
+      };
+    }
+    sections[sectionName].cards.push(cardData);
+  });
+
+  // Convertir las secciones a un array y ordenar por el número de orden
+  const sortedSections = Object.entries(sections).sort(
+    ([, a], [, b]) => a.order - b.order
+  );
+
+  // Recorrer las secciones ordenadas y añadir al DOM
+  sortedSections.forEach(([sectionName, sectionData]) => {
+    // Crear el elemento <section> para el grupo de tarjetas
+    const sectionElement = document.createElement("section");
+    sectionElement.className = "mb-5"; // Clase de Bootstrap para margen inferior
+
+    // Crear el título <h2> para la sección
+    const sectionTitle = document.createElement("h2");
+    sectionTitle.className = "mb-4 section-title"; // Clases para estilizar el título
+    sectionTitle.textContent = sectionName;
+    sectionElement.appendChild(sectionTitle);
+
+    // Crear un contenedor row para las cards dentro de esta sección
+    const sectionRow = document.createElement("div");
+    sectionRow.className = "row g-4"; // Clases de Bootstrap para el grid de cards
+
+    // Ordenar las cards dentro de cada sección si lo deseas (opcional, podrías tener otro criterio aquí)
+    // sectionData.cards.sort((a, b) => a.id.localeCompare(b.id)); // Ejemplo: ordenar alfabéticamente por ID
+
+    sectionData.cards.forEach((cardData) => {
+      const cardElement = createCard(cardData);
+      sectionRow.appendChild(cardElement);
+    });
+
+    sectionElement.appendChild(sectionRow);
+    cardsContainer.appendChild(sectionElement);
   });
 
   // Re-inicializar Prism.js DESPUÉS de que las cards con código se hayan añadido al DOM
-  // Asegúrate de que el script de Prism.js esté cargado ANTES de este script.
   if (window.Prism) {
-    console.log("esta cargando prims?");
+    console.log("Prism.js está cargando.");
     Prism.highlightAll();
   } else {
     console.warn(
       "Prism.js no cargado o no se pudo inicializar resaltado de código."
     );
   }
+
+  // Inicializar tooltips de Bootstrap DESPUÉS de que las cards se hayan agregado al DOM
+  if (
+    typeof bootstrap !== "undefined" &&
+    typeof bootstrap.Tooltip !== "undefined"
+  ) {
+    var tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  } else {
+    console.warn("Bootstrap JS no cargado o no se pudo inicializar tooltips.");
+  }
 });
 
-// Listener delegado para los botones de copiar código
+// Listener delegado para los botones de copiar código (sin cambios, ya lo tienes bien)
 document.addEventListener("click", function (event) {
   const button = event.target.closest(".copy-code-btn");
   if (button) {
@@ -190,8 +240,6 @@ document.addEventListener("click", function (event) {
     const codeSnippetElement = cardBody.querySelector(".code-snippet");
     const codeSnippet = codeSnippetElement.innerText; // .innerText para obtener el texto plano
 
-    // Usar document.execCommand para compatibilidad con iFrames si es necesario,
-    // aunque navigator.clipboard.writeText es el estándar moderno
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard
         .writeText(codeSnippet)
@@ -200,11 +248,9 @@ document.addEventListener("click", function (event) {
         })
         .catch((err) => {
           console.error("Error al copiar el código (clipboard API): ", err);
-          // Fallback si clipboard API falla (ej. permisos)
           fallbackCopyTextToClipboard(codeSnippet, button);
         });
     } else {
-      // Fallback para navegadores antiguos
       fallbackCopyTextToClipboard(codeSnippet, button);
     }
   }
@@ -222,7 +268,6 @@ function updateCopyButtonUI(button) {
 function fallbackCopyTextToClipboard(text, button) {
   const textArea = document.createElement("textarea");
   textArea.value = text;
-  // Evita que el textarea se muestre o afecte el layout
   textArea.style.position = "fixed";
   textArea.style.left = "-9999px";
   textArea.style.top = "0";
@@ -235,30 +280,11 @@ function fallbackCopyTextToClipboard(text, button) {
       updateCopyButtonUI(button);
     } else {
       console.error("Fallback: Error al copiar el código (execCommand).");
-      // Podrías mostrar un mensaje de error más visible al usuario aquí
-      // alert('Hubo un error al copiar el código. Por favor, inténtalo de nuevo manualmente.');
     }
   } catch (err) {
     console.error("Fallback: Error inesperado al copiar el código.", err);
-    // alert('Hubo un error al copiar el código. Por favor, inténtalo de nuevo manualmente.');
   }
   document.body.removeChild(textArea);
-}
-
-// Inicializar tooltips de Bootstrap DESPUÉS de que las cards se hayan agregado al DOM
-// Asegúrate de que el script de Bootstrap JS esté cargado ANTES de este script.
-if (
-  typeof bootstrap !== "undefined" &&
-  typeof bootstrap.Tooltip !== "undefined"
-) {
-  var tooltipTriggerList = [].slice.call(
-    document.querySelectorAll('[data-bs-toggle="tooltip"]')
-  );
-  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
-  });
-} else {
-  console.warn("Bootstrap JS no cargado o no se pudo inicializar tooltips.");
 }
 
 // Puedes añadir aquí las funciones openVideoModal, openPreviewModal si las necesitas
