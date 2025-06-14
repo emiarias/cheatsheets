@@ -1,5 +1,3 @@
-// js/cheatsheetLoader.js
-
 import { htmlCheatsheetData } from "./htmlData.js";
 import { jsCheatsheetData } from "./jsData.js";
 
@@ -23,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dataToLoad = jsCheatsheetData;
   }
 
-  // Función para crear una card (sin cambios, ya la tienes bien)
+  // Función para crear una card
   function createCard(data) {
     const colDiv = document.createElement("div");
     colDiv.className = data.colClasses;
@@ -156,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return colDiv;
   }
 
-  // --- Lógica para agrupar y cargar las cards por sección ---
+  // --- Agrupar y cargar las cards por sección ---
   const sections = {};
 
   // Agrupar las tarjetas por sección
@@ -180,22 +178,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Recorrer las secciones ordenadas y añadir al DOM
   sortedSections.forEach(([sectionName, sectionData]) => {
-    // Crear el elemento <section> para el grupo de tarjetas
+    // Crear el elemento <section>
     const sectionElement = document.createElement("section");
-    sectionElement.className = "mb-5"; // Clase de Bootstrap para margen inferior
+    sectionElement.className = "mb-5";
 
     // Crear el título <h2> para la sección
     const sectionTitle = document.createElement("h2");
-    sectionTitle.className = "mb-4 section-title"; // Clases para estilizar el título
+    sectionTitle.className = "mb-4 section-title";
     sectionTitle.textContent = sectionName;
     sectionElement.appendChild(sectionTitle);
 
     // Crear un contenedor row para las cards dentro de esta sección
     const sectionRow = document.createElement("div");
-    sectionRow.className = "row g-4"; // Clases de Bootstrap para el grid de cards
-
-    // Ordenar las cards dentro de cada sección si lo deseas (opcional, podrías tener otro criterio aquí)
-    // sectionData.cards.sort((a, b) => a.id.localeCompare(b.id)); // Ejemplo: ordenar alfabéticamente por ID
+    sectionRow.className = "row g-4";
 
     sectionData.cards.forEach((cardData) => {
       const cardElement = createCard(cardData);
@@ -232,13 +227,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Listener delegado para los botones de copiar código (sin cambios, ya lo tienes bien)
+// Listener delegado para los botones de copiar código
 document.addEventListener("click", function (event) {
   const button = event.target.closest(".copy-code-btn");
   if (button) {
     const cardBody = button.closest(".card-header").nextElementSibling;
     const codeSnippetElement = cardBody.querySelector(".code-snippet");
-    const codeSnippet = codeSnippetElement.innerText; // .innerText para obtener el texto plano
+    const codeSnippet = codeSnippetElement.innerText;
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard
@@ -262,7 +257,7 @@ function updateCopyButtonUI(button) {
   iconElement.className = "bi bi-check-lg"; // Icono de "check"
   setTimeout(() => {
     iconElement.className = originalClass; // Vuelve al icono original
-  }, 2000); // 2 segundos
+  }, 2000);
 }
 
 function fallbackCopyTextToClipboard(text, button) {
@@ -287,7 +282,7 @@ function fallbackCopyTextToClipboard(text, button) {
   document.body.removeChild(textArea);
 }
 
-// Puedes añadir aquí las funciones openVideoModal, openPreviewModal si las necesitas
+// Añadir aquí las funciones openVideoModal, openPreviewModal si las necesitas
 // function openVideoModal(videoUrl) {
 //   // Lógica para abrir un modal con el video
 //   alert(`Abriendo video: ${videoUrl}`);

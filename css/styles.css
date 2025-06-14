@@ -1,3 +1,7 @@
+:root{
+  --color-primary: #6366f1;
+}
+
 body {
   font-family: "Manrope", sans-serif !important;
   display: flex;
@@ -41,6 +45,10 @@ main {
 .dropdown-item:active {
   background-color: #6366f1 !important;
   color: #fff !important;
+}
+
+.navbar-logo{
+  color: var(--color-primary);
 }
 
 /* --- Botones --- */

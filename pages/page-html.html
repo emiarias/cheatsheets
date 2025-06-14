@@ -36,23 +36,29 @@
   connect-src 'self';
 "
     /> -->
-     <script>
-        (function() {
-            const getSystemTheme = () => {
-                if (window.matchMedia) {
-                    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-                }
-                return 'light'; 
-            };
-            const savedTheme = localStorage.getItem("theme") || "auto";
-            const effectiveTheme = savedTheme === "auto" ? getSystemTheme() : savedTheme;
-            document.documentElement.setAttribute("data-bs-theme", effectiveTheme);
-            const prismThemeLink = document.createElement('link');
-            prismThemeLink.id = 'prism-theme-link'; 
-            prismThemeLink.rel = 'stylesheet';
-            prismThemeLink.href = effectiveTheme === "dark" ? "../css/prism.css" : "../css/prism-default.css";
-            document.head.appendChild(prismThemeLink);
-        })();
+    <script>
+      (function () {
+        const getSystemTheme = () => {
+          if (window.matchMedia) {
+            return window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          }
+          return "light";
+        };
+        const savedTheme = localStorage.getItem("theme") || "auto";
+        const effectiveTheme =
+          savedTheme === "auto" ? getSystemTheme() : savedTheme;
+        document.documentElement.setAttribute("data-bs-theme", effectiveTheme);
+        const prismThemeLink = document.createElement("link");
+        prismThemeLink.id = "prism-theme-link";
+        prismThemeLink.rel = "stylesheet";
+        prismThemeLink.href =
+          effectiveTheme === "dark"
+            ? "../css/prism.css"
+            : "../css/prism-default.css";
+        document.head.appendChild(prismThemeLink);
+      })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -66,7 +72,6 @@
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous"
     />
-    <!-- <link rel="stylesheet" href="" id="prism-theme-link" /> -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
@@ -78,7 +83,7 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-transparent navbar-sticky">
         <div class="container">
-          <a class="navbar-brand" href="../index.html">Cheatsheet</a>
+          <a class="navbar-brand" href="../index.html"><i class="bi bi-bookmark-star-fill navbar-logo"></i> Cheatsheet</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -150,6 +155,7 @@
     </header>
     <main class="container my-4">
       <h1>Cheatsheet de HTML</h1>
+      <p class="lead text-muted">Hoja de referencia rápida con las etiquetas mas comúnes de HTML.</p>
       <section class="row row-gap-3" id="cards-container"></section>
     </main>
     <footer class="py-4 container text-center small">
