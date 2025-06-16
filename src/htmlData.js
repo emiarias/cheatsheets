@@ -639,7 +639,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
   },
   {
     id: "entidades",
-    colClasses: "col-md-6 col-lg-4",
+    colClasses: "col-md-8",
     headerIcon: "📝",
     headerTitle: "Entidades HTML Comunes",
     codeLanguage: "html",
@@ -663,7 +663,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
   },
   {
     id: "meta-tags-basics-seo",
-    colClasses: "col-md-6 col-lg-4",
+    colClasses: "col-md-6",
     headerIcon: "📝",
     headerTitle: "HTML Meta Tags Esenciales",
     codeLanguage: "html",
@@ -706,7 +706,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
   },
   {
     id: "meta-tags-open-graph",
-    colClasses: "col-md-6 col-lg-4",
+    colClasses: "col-md-6",
     headerIcon: "🔗",
     headerTitle: "Meta Tags: Open Graph",
     codeLanguage: "html",
