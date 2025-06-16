@@ -100,3 +100,39 @@ main {
   background-color: #6a1fa6; /* Un tono más oscuro al pasar el ratón */
   color: white;
 }
+
+/* Estilos cards principales */
+.text-underline {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.text-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 0;
+  background-color: #fff;
+  transition: width 200ms linear;
+}
+
+.text-underline:hover::after {
+  width: 100%;
+}
+
+.container-img{
+  overflow: hidden;
+ 
+}
+.img-zoom{
+   transition: 300ms;
+   filter: brightness(0.8);
+}
+.img-zoom:hover{
+  transform: scale(1.2);
+  filter: brightness(1);
+}
