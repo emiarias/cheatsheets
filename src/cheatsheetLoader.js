@@ -1,4 +1,5 @@
 import { htmlCheatsheetData } from "./htmlData.js";
+import { cssCheatsheetData } from "./cssData.js";
 import { jsCheatsheetData } from "./jsData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
     dataToLoad = htmlCheatsheetData;
   } else if (currentPagePath.includes("/cheatsheets-js.html")) {
     dataToLoad = jsCheatsheetData;
+    } else if (currentPagePath.includes("/cheatsheets-css.html")) {
+    dataToLoad = cssCheatsheetData;
   }
 
   // Función para crear una card
