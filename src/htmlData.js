@@ -3,7 +3,7 @@
 export const htmlCheatsheetData = [
   {
     id: "sintaxis-html",
-    colClasses: "col-md-6 ",
+    colClasses: "col-md-12",
     headerIcon: "🧩",
     headerTitle: "Sintaxis HTML",
     codeLanguage: "html",
@@ -15,26 +15,26 @@ export const htmlCheatsheetData = [
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
-    section: "Fundamentos", // Nueva propiedad
-    order: 1, // Nueva propiedad
+    section: "Fundamentos", 
+    order: 1, 
   },
-  {
-    id: "descargas",
-    colClasses: "col-md-6",
-    headerIcon: "🧩",
-    headerTitle: "Descargas",
-    codeLanguage: "html",
-    codeSnippet: null,
-    bodyContent:
-      "Aquí encontrarás enlaces y archivos descargables que te serán útiles para tu aprendizaje y proyectos HTML, como plantillas, guías rápidas o assets comunes.",
-    bodyText: null,
-    footerLinkInformation: null,
-    footerLinkDemo: null,
-    footerPreview: null,
-    footerVideo: null,
-    section: "Fundamentos", // Nueva propiedad
-    order: 1, // Nueva propiedad
-  },
+  // {
+  //   id: "descargas",
+  //   colClasses: "col-md-6",
+  //   headerIcon: "🧩",
+  //   headerTitle: "Descargas",
+  //   codeLanguage: "html",
+  //   codeSnippet: null,
+  //   bodyContent:
+  //     "Aquí encontrarás enlaces y archivos descargables que te serán útiles para tu aprendizaje y proyectos HTML, como plantillas, guías rápidas o assets comunes.",
+  //   bodyText: null,
+  //   footerLinkInformation: null,
+  //   footerLinkDemo: null,
+  //   footerPreview: null,
+  //   footerVideo: null,
+  //   section: "Fundamentos", // Nueva propiedad
+  //   order: 1, // Nueva propiedad
+  // },
   {
     id: "estructura-basica",
     colClasses: "col-md-6 col-lg-4",
@@ -61,8 +61,8 @@ export const htmlCheatsheetData = [
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
-    section: "Estructura", // Nueva propiedad
-    order: 2, // Nueva propiedad
+    section: "Estructura", 
+    order: 2, 
   },
   {
     id: "meta-tags",
