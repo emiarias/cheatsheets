@@ -37,24 +37,30 @@
 "
     /> -->
     <script>
-        (function() {
-            const getSystemTheme = () => {
-                if (window.matchMedia) {
-                    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-                }
-                return 'light'; 
-            };
-            const savedTheme = localStorage.getItem("theme") || "auto";
-            const effectiveTheme = savedTheme === "auto" ? getSystemTheme() : savedTheme;
-            document.documentElement.setAttribute("data-bs-theme", effectiveTheme);
-            const prismThemeLink = document.createElement('link');
-            prismThemeLink.id = 'prism-theme-link'; 
-            prismThemeLink.rel = 'stylesheet';
-            prismThemeLink.href = effectiveTheme === "dark" ? "./css/prism.css" : "./css/prism-default.css";
-            document.head.appendChild(prismThemeLink);
-        })();
+      (function () {
+        const getSystemTheme = () => {
+          if (window.matchMedia) {
+            return window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          }
+          return "light";
+        };
+        const savedTheme = localStorage.getItem("theme") || "auto";
+        const effectiveTheme =
+          savedTheme === "auto" ? getSystemTheme() : savedTheme;
+        document.documentElement.setAttribute("data-bs-theme", effectiveTheme);
+        const prismThemeLink = document.createElement("link");
+        prismThemeLink.id = "prism-theme-link";
+        prismThemeLink.rel = "stylesheet";
+        prismThemeLink.href =
+          effectiveTheme === "dark"
+            ? "../css/prism.css"
+            : "../css/prism-default.css";
+        document.head.appendChild(prismThemeLink);
+      })();
     </script>
-        <!-- favicon -->
+    <!-- favicon -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -78,14 +84,16 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <title>Cheatsheet</title>
   </head>
-  <body class="">
+  <body>
     <header>
       <nav class="navbar navbar-expand-lg bg-transparent navbar-sticky">
         <div class="container">
-          <a class="navbar-brand" href="./index.html"><i class="bi bi-bookmark-star-fill navbar-logo"></i> Cheatsheet</a>
+          <a class="navbar-brand" href="../index.html"
+            ><i class="bi bi-bookmark-star-fill navbar-logo"></i> Cheatsheet</a
+          >
           <button
             class="navbar-toggler"
             type="button"
@@ -100,29 +108,20 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="./pages/cheatsheets-html.html">HTML</a>
+                <a class="nav-link active" href="./cheatsheets-html.html"
+                  >HTML</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/cheatsheets-css.html">CSS</a>
+                <a class="nav-link" href="./cheatsheets-css.html">CSS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/cheatsheets-js.html">JS</a>
+                <a class="nav-link" href="./cheatsheets-js.html">JS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/aboutme.html">Acerca de</a>
+                <a class="nav-link" href="./aboutme.html">Acerca de</a>
               </li>
             </ul>
-            <!-- <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Buscar"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Buscar
-              </button>
-            </form> -->
             <div class="dropdown">
               <button
                 class="btn btn-link nav-link px-0 px-lg-2 py-2 dropdown-toggle d-flex align-items-center"
@@ -164,7 +163,15 @@
         </div>
       </nav>
     </header>
-    <main class="container my-4"></main>
+    <main class="container my-4">
+      <div class="text-center my-4">
+        <h1><span class="">Cheatsheet de </span> HTML</h1>
+        <p class="lead text-muted">
+          Hoja de referencia rápida con las etiquetas mas comúnes de HTML.
+        </p>
+      </div>
+      <section class="row row-gap-3" id="cards-container"></section>
+    </main>
     <footer class="py-4 container text-center small">
       <p class="text-muted">
         Recursos de HTML, CSS y JavaScript creados para estudiantes y
@@ -182,6 +189,8 @@
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
       crossorigin="anonymous"
     ></script>
-    <script src="./src/app.js"></script>
+    <script src="../src/prism.js"></script>
+    <script src="../src/app.js"></script>
+    <script src="../src/cheatsheetLoader.js" type="module"></script>
   </body>
 </html>

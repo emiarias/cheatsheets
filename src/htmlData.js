@@ -9,7 +9,8 @@ export const htmlCheatsheetData = [
     codeLanguage: "html",
     codeSnippet: `&lt;elemento atributo = "valor"&gt; contenido &lt;/elemento&gt;`,
     bodyContent: null,
-    bodyText: null,
+    bodyText: `La sintaxis básica de HTML se compone de <strong>etiquetas</strong> (elementos) que encierran contenido. Algunas etiquetas necesitan <strong>atributos</strong> para darles propiedades adicionales. <br>
+    💡 Tip: Asegúrate siempre de cerrar tus etiquetas correctamente para evitar errores en la página`,
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
@@ -24,7 +25,8 @@ export const htmlCheatsheetData = [
     headerTitle: "Descargas",
     codeLanguage: "html",
     codeSnippet: null,
-    bodyContent: "aqui agregare recursos para descargar",
+    bodyContent:
+      "Aquí encontrarás enlaces y archivos descargables que te serán útiles para tu aprendizaje y proyectos HTML, como plantillas, guías rápidas o assets comunes.",
     bodyText: null,
     footerLinkInformation: null,
     footerLinkDemo: null,
@@ -52,7 +54,8 @@ export const htmlCheatsheetData = [
 &lt;/body&gt;
 &lt;/html&gt;`,
     bodyContent: null,
-    bodyText: null,
+    bodyText:
+      "Todo documento HTML comienza con esta estructura. Define el tipo de documento, el idioma, y las secciones &lt;head&gt; (información para el navegador) y &lt;body&gt; (contenido visible).",
     footerLinkInformation:
       "https://developer.mozilla.org/es/docs/Learn_web_development/Core/Structuring_content/Structuring_documents",
     footerLinkDemo: null,
@@ -77,7 +80,8 @@ export const htmlCheatsheetData = [
 &lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;`,
     bodyContent: null,
     bodyText:
-      "Las meta etiquetas proporcionan información crucial sobre tu página, como la codificación de caracteres, la descripción y el viewport. También se incluyen enlaces a CSS.",
+      "Las meta tags  <strong>meta</strong> le dan información importante al navegador sobre tu página (codificación, descripción, cómo se ve en móviles).<br> Los <strong>link</strong> se usan para conectar tu HTML con archivos externos como hojas de estilo CSS o el pequeño icono de la pestaña del navegador (favicon).",
+
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
@@ -97,7 +101,7 @@ export const htmlCheatsheetData = [
 de varias lineas --&gt;`,
     bodyContent: null,
     bodyText: `Los comentarios en HTML son súper útiles para documentar tu código, explicando secciones complejas o dejando notas para ti mismo o para otros desarrolladores que puedan trabajar en el proyecto.
-     No aparecen en el navegador, son perfectos para hacer que tu código sea más claro, fácil de mantener y de entender a futuro, especialmente en proyectos grandes o cuando trabajas en equipo.`,
+    <br> No aparecen en el navegador, son perfectos para hacer que tu código sea más claro, fácil de mantener y de entender a futuro, especialmente en proyectos grandes o cuando trabajas en equipo.`,
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
@@ -192,7 +196,8 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
   Escrito por &lt;a href="mailto:ejemplo@email.com"&gt;John Doe&lt;/a&gt;.
 &lt;/address&gt;`,
     bodyContent: null,
-    bodyText: null,
+    bodyText:
+      "Usar estas etiquetas ayuda a los lectores de pantalla y a los motores de búsqueda a entender mejor el contexto de tu contenido.",
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
@@ -215,7 +220,8 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
 &lt;a href="mailto:email@example.com"&gt;Enviar Email&lt;/a&gt;
 &lt;a href="tel:+123456789"&gt;Llamar&lt;/a&gt;`,
     bodyContent: null,
-    bodyText: null,
+    bodyText:
+      'Los enlaces <strong>a</strong> son el corazón de la web, conectando páginas y recursos. El atributo `href` es su destino. <br>💡 Tip: Usa `target="_blank"` con `rel="noopener noreferrer"` para abrir enlaces externos en una nueva pestaña de forma segura.',
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
@@ -237,7 +243,8 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
   &lt;figcaption&gt;Una persona sonriendo.&lt;/figcaption&gt;
 &lt;/figure&gt;`,
     bodyContent: null,
-    bodyText: null,
+    bodyText:
+      "La etiqueta <strong>img</strong> es para insertar imágenes. El atributo <strong>src</strong> es la ruta a la imagen y <strong>alt</strong> es una descripción alternativa crucial para la accesibilidad (¡y SEO!).<br> <strong>figure</strong> y <strong>figcaption</strong> se usan para imágenes con una leyenda.",
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
@@ -257,7 +264,8 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
   &lt;li&gt;Elemento tres&lt;/li&gt;
 &lt;/ul&gt;`,
     bodyContent: null,
-    bodyText: null,
+    bodyText:
+      "Las listas no ordenadas se usan para agrupar elementos que no tienen un orden específico, como una lista de características o ingredientes.",
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
@@ -282,7 +290,8 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
   &lt;li&gt;Paso D&lt;/li&gt;
 &lt;/ol&gt;`,
     bodyContent: null,
-    bodyText: null,
+    bodyText:
+      "Las listas ordenadas se utilizan para elementos que sí tienen un orden específico, como pasos en una receta o un ranking. Puedes personalizar el tipo de marcador (type) y el inicio (start)",
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
@@ -303,7 +312,8 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
   &lt;dd&gt;Hojas de Estilo en Cascada.&lt;/dd&gt;
 &lt;/dl&gt;`,
     bodyContent: null,
-    bodyText: null,
+    bodyText: `Las listas de definiciones son perfectas para glosarios o listas de preguntas y respuestas. Tienen un término (dt) y su descripción (dd).
+    <br>💡 Tip: Son muy útiles para estructurar pares de información clave-valor, como en un diccionario o una sección de 'Preguntas Frecuentes'.`,
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
@@ -400,7 +410,8 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
   </tbody>
 </table>
     </div>`,
-    bodyText: null,
+    bodyText:
+      "Aquí tienes un desglose de las etiquetas fundamentales para construir tablas en HTML. Cada una tiene un rol específico que ayuda a estructurar los datos de manera lógica y accesible.",
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
@@ -448,7 +459,8 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
   </tbody>
 </table>
     </div>`,
-    bodyText: null,
+    bodyText:
+      "Estos atributos te dan un control más fino sobre el diseño y la accesibilidad de tus tablas. `colspan` y `rowspan` son para la presentación visual, mientras que `headers` y `scope` son fundamentales para la semántica y la accesibilidad, ayudando a los lectores de pantalla a entender la estructura de datos.",
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
@@ -473,7 +485,8 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
   &lt;button type="reset"&gt;Limpiar&lt;/button&gt;
 &lt;/form&gt;`,
     bodyContent: null,
-    bodyText: null,
+    bodyText:
+      "El <strong>form</strong> es el contenedor principal para todos los controles de entrada del usuario. Los <strong>label</strong> asocian texto a los <strong>input</strong> (muy importante para la accesibilidad).",
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
@@ -569,7 +582,8 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
  <source src="../assets/audio/insecto.mp3" type="audio/mpeg">
   Tu navegador no soporta audio.
 </audio>`,
-    bodyText: null,
+    bodyText:
+      "Esta etiqueta te permite insertar archivos de sonido directamente en tu página web. El atributo <b>controls</b> muestra los controles de reproducción, <b>loop</b> lo repite, <b>autoplay</b> lo inicia automáticamente y <b>muted</b> lo silencia por defecto",
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
@@ -591,7 +605,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
   <source src="https://videos.pexels.com/video-files/12290609/12290609-uhd_2560_1440_30fps.mp4" type="video/mp4">
   Tu navegador no soporta video.
 </video>`,
-    bodyText: null,
+    bodyText: `Con <strong>video</strong>, puedes integrar vídeos en tu sitio. <b>controls</b> muestra la barra de reproducción  y <b>poster</b> es una imagen de previsualización. <br>💡 Tip: Al igual que con el audio, usa múltiples <strong>source</strong> para ofrecer tu video en diferentes formatos (.mp4, .webm) y asegurar la compatibilidad con varios navegadores.`,
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
@@ -615,12 +629,109 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
   allowfullscreen&gt;
 &lt;/iframe&gt;`,
     bodyContent: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14240.859733970994!2d-65.21414151420274!3d-26.833115279836335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c0febbe97db%3A0x65937e9ca09416ef!2sMuseo%20casa%20hist%C3%B3rica%20de%20la%20Independencia%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1750085099719!5m2!1ses-419!2sar" height="250" class="w-100" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-    bodyText: null,
+    bodyText: 'Los <source>iframe<source> te permiten incrustar otra página web o contenido de otra fuente (como videos de YouTube o mapas de Google) directamente en tu documento HTML. <br>💡 Tip: Aunque son muy útiles, úsalos con precaución, ya que pueden afectar el rendimiento y la seguridad de tu página. Siempre verifica la fuente del contenido que embebes',
     footerLinkInformation: null,
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
     section: "Media",
     order: 7,
+  },
+  {
+    id: "entidades",
+    colClasses: "col-md-6 col-lg-4",
+    headerIcon: "📝",
+    headerTitle: "Entidades HTML Comunes",
+    codeLanguage: "html",
+    codeSnippet: `&amp;lt;  &lt;!-- Menor que (&lt;) --&gt;
+&amp;gt;  &lt;!-- Mayor que (&gt;) --&gt;
+&amp;amp; &lt;!-- Ampersand (&amp;) --&gt;
+&amp;quot; &lt;!-- Comillas dobles (") --&gt;
+&amp;apos; &lt;!-- Apóstrofe (') --&gt;
+&amp;nbsp; &lt;!-- Espacio sin ruptura --&gt;
+&amp;copy; &lt;!-- Símbolo de copyright (©) --&gt;
+&amp;reg; &lt;!-- Símbolo de marca registrada (®) --&gt;
+&amp;euro; &lt;!-- Símbolo de Euro (€) --&gt;`,
+    bodyContent: null,
+    bodyText: `Las entidades HTML son códigos especiales que representan caracteres que de otra forma serían difíciles de escribir o podrían ser interpretados como parte del código HTML. <br>Son esenciales para mostrar caracteres como '<' o '>' que tienen un significado especial en HTML.`,
+    footerLinkInformation: null,
+    footerLinkDemo: null,
+    footerPreview: null,
+    footerVideo: null,
+    section: "Entidades",
+    order: 8,
+  },
+  {
+    id: "meta-tags-basics-seo",
+    colClasses: "col-md-6 col-lg-4",
+    headerIcon: "📝",
+    headerTitle: "HTML Meta Tags Esenciales",
+    codeLanguage: "html",
+    codeSnippet: `&lt;!-- Codificación de caracteres --&gt;
+&lt;meta charset="UTF-8" /&gt;
+
+&lt;!-- Título de la página --&gt;
+&lt;title&gt;Título de tu Página&lt;/title&gt;
+
+&lt;!-- Título para compartir (Open Graph y Twitter) --&gt;
+&lt;meta property="og:title" content="HTML Cheatsheet" /&gt;
+&lt;meta name="twitter:title" content="HTML Cheatsheet" /&gt;
+
+&lt;!-- URL Canónica --&gt;
+&lt;link rel="canonical" href="https://yourwebsite.com/page.html" /&gt;
+
+&lt;!-- Descripción del documento --&gt;
+&lt;meta name="description" content="Descripción de tu página, importante para SEO." /&gt;
+&lt;meta property="og:description" content="Descripción de tu página para redes sociales." /&gt;
+&lt;meta name="twitter:description" content="Descripción para Twitter." /&gt;
+
+&lt;!-- Imagen para compartir --&gt;
+&lt;meta property="og:image" content="https://www.yourwebsite.com/image.jpg" /&gt;
+&lt;meta name="twitter:image" content="https://www.yourwebsite.com/image.jpg" /&gt;
+
+&lt;!-- Compatibilidad con navegadores antiguos (IE) --&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+
+&lt;!-- Configuración del Viewport para Responsive Design --&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;`,
+    bodyContent: null,
+    bodyText:
+      "Este conjunto de meta tags es fundamental para cualquier página HTML. Incluye la codificación de caracteres, el título del documento, las descripciones y URLs para SEO y compartir en redes, y la configuración del viewport para asegurar la correcta visualización en todos los dispositivos.",
+    footerLinkInformation: null,
+    footerLinkDemo: null,
+    footerPreview: null,
+    footerVideo: null,
+    section: "HTML meta Tags",
+    order: 9,
+  },
+  {
+    id: "meta-tags-open-graph",
+    colClasses: "col-md-6 col-lg-4",
+    headerIcon: "🔗",
+    headerTitle: "Meta Tags: Open Graph",
+    codeLanguage: "html",
+    codeSnippet: `&lt;!-- Tipo de contenido (ej. website, article) --&gt;
+&lt;meta property="og:type" content="website" /&gt;
+&lt;!-- Localización del contenido --&gt;
+&lt;meta property="og:locale" content="es_ES" /&gt;
+&lt;!-- Título del contenido --&gt;
+&lt;meta property="og:title" content="Título para Open Graph" /&gt;
+&lt;!-- URL del contenido --&gt;
+&lt;meta property="og:url" content="https://yourwebsite.com/your-page.html" /&gt;
+&lt;!-- URL de la imagen para compartir --&gt;
+&lt;meta property="og:image" content="https://yourwebsite.com/image.jpg" /&gt;
+&lt;!-- Nombre del sitio web --&gt;
+&lt;meta property="og:site_name" content="Nombre de tu Sitio" /&gt;
+&lt;!-- Descripción del contenido --&gt;
+&lt;meta property="og:description" content="Descripción concisa para Facebook, LinkedIn, etc." /&gt;`,
+    bodyContent: null,
+    bodyText:
+      "Las meta tags Open Graph controlan cómo se muestra tu contenido cuando es compartido en plataformas como Facebook, Instagram, Pinterest y LinkedIn. Son esenciales para una presentación atractiva del enlace y para maximizar el impacto visual.",
+    footerLinkInformation: null,
+    footerLinkDemo: null,
+    footerPreview: null,
+    footerVideo: null,
+    section: "HTML meta Tags",
+    order: 9,
   },
 ];

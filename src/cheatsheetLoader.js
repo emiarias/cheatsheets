@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Detectar la página actual para cargar los datos correctos
   const currentPagePath = window.location.pathname;
 
-  if (currentPagePath.includes("/page-html.html")) {
+  if (currentPagePath.includes("/cheatsheets-html.html")) {
     dataToLoad = htmlCheatsheetData;
-  } else if (currentPagePath.includes("/cheatsheet-js.html")) {
+  } else if (currentPagePath.includes("/cheatsheets-js.html")) {
     dataToLoad = jsCheatsheetData;
   }
 
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (data.bodyText !== null) {
       const pElement = document.createElement("p");
       pElement.className = "card-text small text-muted mb-2";
-      pElement.textContent = data.bodyText;
+      pElement.innerHTML = data.bodyText;
       cardBody.appendChild(pElement);
     }
 
@@ -203,7 +203,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Re-inicializar Prism.js DESPUÉS de que las cards con código se hayan añadido al DOM
   if (window.Prism) {
-    console.log("Prism.js está cargando.");
     Prism.highlightAll();
   } else {
     console.warn(
