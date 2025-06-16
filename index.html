@@ -37,31 +37,37 @@
 "
     /> -->
     <script>
-        (function() {
-            const getSystemTheme = () => {
-                if (window.matchMedia) {
-                    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-                }
-                return 'light'; 
-            };
-            const savedTheme = localStorage.getItem("theme") || "auto";
-            const effectiveTheme = savedTheme === "auto" ? getSystemTheme() : savedTheme;
-            document.documentElement.setAttribute("data-bs-theme", effectiveTheme);
-            const prismThemeLink = document.createElement('link');
-            prismThemeLink.id = 'prism-theme-link'; 
-            prismThemeLink.rel = 'stylesheet';
-            prismThemeLink.href = effectiveTheme === "dark" ? "./css/prism.css" : "./css/prism-default.css";
-            document.head.appendChild(prismThemeLink);
-        })();
+      (function () {
+        const getSystemTheme = () => {
+          if (window.matchMedia) {
+            return window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          }
+          return "light";
+        };
+        const savedTheme = localStorage.getItem("theme") || "auto";
+        const effectiveTheme =
+          savedTheme === "auto" ? getSystemTheme() : savedTheme;
+        document.documentElement.setAttribute("data-bs-theme", effectiveTheme);
+        const prismThemeLink = document.createElement("link");
+        prismThemeLink.id = "prism-theme-link";
+        prismThemeLink.rel = "stylesheet";
+        prismThemeLink.href =
+          effectiveTheme === "dark"
+            ? "./css/prism.css"
+            : "./css/prism-default.css";
+        document.head.appendChild(prismThemeLink);
+      })();
     </script>
-        <!-- favicon -->
+    <!-- favicon -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="cheatsheets" />
     <link rel="manifest" href="/site.webmanifest" />
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -85,7 +91,9 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-transparent navbar-sticky">
         <div class="container">
-          <a class="navbar-brand" href="./index.html"><i class="bi bi-bookmark-star-fill navbar-logo"></i> Cheatsheet</a>
+          <a class="navbar-brand" href="./index.html"
+            ><i class="bi bi-bookmark-star-fill navbar-logo"></i> Cheatsheet</a
+          >
           <button
             class="navbar-toggler"
             type="button"
@@ -100,16 +108,32 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="./pages/cheatsheets-html.html">HTML</a>
+                <a class="nav-link" href="./pages/cheatsheets-html.html"
+                  >HTML</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./pages/cheatsheets-css.html">CSS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="./pages/cheatsheets-js.html">JS</a>
+                <a class="nav-link disabled" href="./pages/cheatsheets-js.html"
+                  >JS</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="./pages/aboutme.html">Acerca de</a>
+                <a class="nav-link disabled" href="./pages/aboutme.html"
+                  >Acerca de</a
+                >
+              </li>
+              <li>
+                <a class="github-button"
+   href="https://github.com/usuario/repositorio"
+   data-icon="octicon-star"
+   data-size="large"
+   data-show-count="true"
+   aria-label="Star usuario/repositorio on GitHub">
+  Star
+</a>
               </li>
             </ul>
             <!-- <form class="d-flex" role="search">
@@ -164,7 +188,24 @@
         </div>
       </nav>
     </header>
-    <main class="container my-4"></main>
+    <main class="container my-4">
+      <section class="bg-dark-subtle rounded-3 p-4">
+        <h1 class="fw-bold text-body-emphasis my-4">Cheatsheets para tus primeros pasos en programación</h1>
+        <p>
+          Bienvenido al repositorio de hojas de referencias rápidas pensado para
+          acompañarte en tus primeros pasos en el mundo de la programación. Acá
+          vas a encontrar un resumen claro de esas palabras, conceptos y
+          estructuras que necesitás para crear páginas web, junto con ejemplos
+          prácticos y enlaces a documentación extra para profundizar cuando lo
+          necesites.
+        </p>
+
+        <p>
+          📌Si este proyecto te resulta útil, ¡ayudame a que más personas lo
+          encuentren dándole una ⭐️ en GitHub!
+        </p>
+      </section>
+    </main>
     <footer class="py-4 container text-center small">
       <p class="text-muted">
         Recursos de HTML, CSS y JavaScript creados para estudiantes y
@@ -183,5 +224,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./src/app.js"></script>
+    
   </body>
 </html>
