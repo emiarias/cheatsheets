@@ -60,3 +60,9 @@ Si querés seguir mi trabajo, podés visitar mi [GitHub](https://github.com/emia
 
 
 Gracias por visitar este proyecto. ¡Felices líneas de código! 👩‍💻👨‍💻
+
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.es).  
+Esto significa que podés usarlo, compartirlo y adaptarlo **siempre que cites a la autora** y **no sea con fines comerciales**.
