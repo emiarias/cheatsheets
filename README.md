@@ -58,10 +58,6 @@ Si querés seguir mi trabajo, podés visitar mi [GitHub](https://github.com/emia
 ---
 > 💻 Programar se aprende programando. No tengas miedo de equivocarte: cada error es una oportunidad para entender mejor el código. 💪
 
-
-Gracias por visitar este proyecto. ¡Felices líneas de código! 👩‍💻👨‍💻
-
-
 ## 📄 Licencia
 
 Este proyecto está licenciado bajo [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.es).  
