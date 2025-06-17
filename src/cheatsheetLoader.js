@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inserta el bodyText si existe (texto simple con clase)
     if (data.bodyText !== null) {
       const pElement = document.createElement("p");
-      pElement.className = "card-text small text-muted mb-2";
+      pElement.className = "card-text text-muted mb-2";
       pElement.innerHTML = data.bodyText;
       cardBody.appendChild(pElement);
     }
