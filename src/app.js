@@ -57,9 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // 3. Cambiar la hoja de estilos de Prism.js
     if (prismThemeLink) {
       if (effectiveTheme === "dark") {
-        prismThemeLink.href = "/css/prism.css"; // Ruta relativa a la raíz del sitio (public/)
+        prismThemeLink.href = "./css/prism.css"; // Ruta relativa a la raíz del sitio (public/)
       } else {
-        prismThemeLink.href = "/css/prism-default.css"; // Ruta relativa a la raíz del sitio (public/)
+        prismThemeLink.href = "./css/prism-default.css"; // Ruta relativa a la raíz del sitio (public/)
       }
     }
     
