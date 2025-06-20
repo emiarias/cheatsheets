@@ -4,6 +4,8 @@ import { jsCheatsheetData } from "./jsData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const cardsContainer = document.getElementById("cards-container");
+  const searchInput = document.getElementById("search-input"); 
+  const noResultsMessage = document.getElementById("no-results-message"); 
 
   if (!cardsContainer) {
     console.warn(
@@ -12,19 +14,123 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  let dataToLoad = [];
-  // Detectar la página actual para cargar los datos correctos
+  let allCheatsheetData = []; 
+  let filteredCheatsheetData = []; 
   const currentPagePath = window.location.pathname;
 
   if (currentPagePath.includes("/cheatsheets-html.html")) {
-    dataToLoad = htmlCheatsheetData;
+    allCheatsheetData = htmlCheatsheetData;
   } else if (currentPagePath.includes("/cheatsheets-js.html")) {
-    dataToLoad = jsCheatsheetData;
-    } else if (currentPagePath.includes("/cheatsheets-css.html")) {
-    dataToLoad = cssCheatsheetData;
+    allCheatsheetData = jsCheatsheetData;
+  } else if (currentPagePath.includes("/cheatsheets-css.html")) {
+    allCheatsheetData = cssCheatsheetData;
   }
 
-  // Función para crear una card
+  filteredCheatsheetData = [...allCheatsheetData];
+  renderCards(filteredCheatsheetData); 
+
+  // --- Funcionalidad de Búsqueda ---
+  if (searchInput) {
+    searchInput.addEventListener("input", (event) => {
+      const searchTerm = event.target.value.toLowerCase().trim(); 
+      filterAndRenderCards(searchTerm);
+    });
+  }
+
+  function filterAndRenderCards(searchTerm) {
+    if (searchTerm === "") {
+      filteredCheatsheetData = [...allCheatsheetData]; 
+    } else {
+      filteredCheatsheetData = allCheatsheetData.filter(cardData => {
+        const searchableContent = `
+          ${cardData.headerTitle || ''}
+          ${cardData.bodyText || ''}
+          ${cardData.codeSnippet || ''}
+          ${cardData.section || ''}
+          ${cardData.id || ''}
+        `.toLowerCase();
+        return searchableContent.includes(searchTerm);
+      });
+    }
+    renderCards(filteredCheatsheetData);
+  }
+
+  // --- Función principal para renderizar las cards ---
+  function renderCards(dataToRender) {
+    cardsContainer.innerHTML = ''; 
+
+    if (dataToRender.length === 0) {
+      noResultsMessage.classList.remove('d-none'); 
+    } else {
+      noResultsMessage.classList.add('d-none'); 
+    }
+
+    // Agrupar y cargar las cards por sección
+    const sections = {};
+
+    dataToRender.forEach((cardData) => { 
+      const sectionName = cardData.section || "Sin Sección";
+      const sectionOrder = cardData.order || 999;
+
+      if (!sections[sectionName]) {
+        sections[sectionName] = {
+          order: sectionOrder,
+          cards: [],
+        };
+      }
+      sections[sectionName].cards.push(cardData);
+    });
+
+    const sortedSections = Object.entries(sections).sort(
+      ([, a], [, b]) => a.order - b.order
+    );
+
+    sortedSections.forEach(([sectionName, sectionData]) => {
+      const sectionElement = document.createElement("section");
+      sectionElement.className = "mb-5";
+
+      const sectionTitle = document.createElement("h2");
+      sectionTitle.className = "mb-4 section-title";
+      sectionTitle.textContent = sectionName;
+      sectionElement.appendChild(sectionTitle);
+
+      const sectionRow = document.createElement("div");
+      sectionRow.className = "row g-4";
+
+      sectionData.cards.forEach((cardData) => {
+        const cardElement = createCard(cardData);
+        sectionRow.appendChild(cardElement);
+      });
+
+      sectionElement.appendChild(sectionRow);
+      cardsContainer.appendChild(sectionElement);
+    });
+
+    // Re-inicializar Prism.js y Bootstrap Tooltips
+    if (window.Prism) {
+      Prism.highlightAll();
+    } else {
+      console.warn(
+        "Prism.js no cargado o no se pudo inicializar resaltado de código."
+      );
+    }
+
+    if (
+      typeof bootstrap !== "undefined" &&
+      typeof bootstrap.Tooltip !== "undefined"
+    ) {
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    } else {
+      console.warn("Bootstrap JS no cargado o no se pudo inicializar tooltips.");
+    }
+  }
+
+  // --- Función para crear una card ---
   function createCard(data) {
     const colDiv = document.createElement("div");
     colDiv.className = data.colClasses;
@@ -157,140 +263,57 @@ document.addEventListener("DOMContentLoaded", () => {
     return colDiv;
   }
 
-  // --- Agrupar y cargar las cards por sección ---
-  const sections = {};
+  document.addEventListener("click", function (event) {
+    const button = event.target.closest(".copy-code-btn");
+    if (button) {
+      const cardBody = button.closest(".card-header").nextElementSibling;
+      const codeSnippetElement = cardBody.querySelector(".code-snippet");
+      const codeSnippet = codeSnippetElement.innerText;
 
-  // Agrupar las tarjetas por sección
-  dataToLoad.forEach((cardData) => {
-    const sectionName = cardData.section || "Sin Sección"; // Usa "Sin Sección" si la propiedad no existe
-    const sectionOrder = cardData.order || 999; // Un número alto para secciones sin orden
-
-    if (!sections[sectionName]) {
-      sections[sectionName] = {
-        order: sectionOrder,
-        cards: [],
-      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard
+          .writeText(codeSnippet)
+          .then(() => {
+            updateCopyButtonUI(button);
+          })
+          .catch((err) => {
+            console.error("Error al copiar el código (clipboard API): ", err);
+            fallbackCopyTextToClipboard(codeSnippet, button);
+          });
+      } else {
+        fallbackCopyTextToClipboard(codeSnippet, button);
+      }
     }
-    sections[sectionName].cards.push(cardData);
   });
 
-  // Convertir las secciones a un array y ordenar por el número de orden
-  const sortedSections = Object.entries(sections).sort(
-    ([, a], [, b]) => a.order - b.order
-  );
-
-  // Recorrer las secciones ordenadas y añadir al DOM
-  sortedSections.forEach(([sectionName, sectionData]) => {
-    // Crear el elemento <section>
-    const sectionElement = document.createElement("section");
-    sectionElement.className = "mb-5";
-
-    // Crear el título <h2> para la sección
-    const sectionTitle = document.createElement("h2");
-    sectionTitle.className = "mb-4 section-title";
-    sectionTitle.textContent = sectionName;
-    sectionElement.appendChild(sectionTitle);
-
-    // Crear un contenedor row para las cards dentro de esta sección
-    const sectionRow = document.createElement("div");
-    sectionRow.className = "row g-4";
-
-    sectionData.cards.forEach((cardData) => {
-      const cardElement = createCard(cardData);
-      sectionRow.appendChild(cardElement);
-    });
-
-    sectionElement.appendChild(sectionRow);
-    cardsContainer.appendChild(sectionElement);
-  });
-
-  // Re-inicializar Prism.js DESPUÉS de que las cards con código se hayan añadido al DOM
-  if (window.Prism) {
-    Prism.highlightAll();
-  } else {
-    console.warn(
-      "Prism.js no cargado o no se pudo inicializar resaltado de código."
-    );
+  function updateCopyButtonUI(button) {
+    const iconElement = button.querySelector("i");
+    const originalClass = iconElement.className;
+    iconElement.className = "bi bi-check-lg"; 
+    setTimeout(() => {
+      iconElement.className = originalClass; 
+    }, 2000);
   }
 
-  // Inicializar tooltips de Bootstrap DESPUÉS de que las cards se hayan agregado al DOM
-  if (
-    typeof bootstrap !== "undefined" &&
-    typeof bootstrap.Tooltip !== "undefined"
-  ) {
-    var tooltipTriggerList = [].slice.call(
-      document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    );
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-  } else {
-    console.warn("Bootstrap JS no cargado o no se pudo inicializar tooltips.");
+  function fallbackCopyTextToClipboard(text, button) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.position = "fixed";
+    textArea.style.left = "-9999px";
+    textArea.style.top = "0";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      const successful = document.execCommand("copy");
+      if (successful) {
+        updateCopyButtonUI(button);
+      } else {
+        console.error("Fallback: Error al copiar el código (execCommand).");
+      }
+    } catch (err) {
+      console.error("Fallback: Error inesperado al copiar el código.", err);
+    }
+    document.body.removeChild(textArea);
   }
 });
-
-// Listener delegado para los botones de copiar código
-document.addEventListener("click", function (event) {
-  const button = event.target.closest(".copy-code-btn");
-  if (button) {
-    const cardBody = button.closest(".card-header").nextElementSibling;
-    const codeSnippetElement = cardBody.querySelector(".code-snippet");
-    const codeSnippet = codeSnippetElement.innerText;
-
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard
-        .writeText(codeSnippet)
-        .then(() => {
-          updateCopyButtonUI(button);
-        })
-        .catch((err) => {
-          console.error("Error al copiar el código (clipboard API): ", err);
-          fallbackCopyTextToClipboard(codeSnippet, button);
-        });
-    } else {
-      fallbackCopyTextToClipboard(codeSnippet, button);
-    }
-  }
-});
-
-function updateCopyButtonUI(button) {
-  const iconElement = button.querySelector("i");
-  const originalClass = iconElement.className;
-  iconElement.className = "bi bi-check-lg"; // Icono de "check"
-  setTimeout(() => {
-    iconElement.className = originalClass; // Vuelve al icono original
-  }, 2000);
-}
-
-function fallbackCopyTextToClipboard(text, button) {
-  const textArea = document.createElement("textarea");
-  textArea.value = text;
-  textArea.style.position = "fixed";
-  textArea.style.left = "-9999px";
-  textArea.style.top = "0";
-  document.body.appendChild(textArea);
-  textArea.focus();
-  textArea.select();
-  try {
-    const successful = document.execCommand("copy");
-    if (successful) {
-      updateCopyButtonUI(button);
-    } else {
-      console.error("Fallback: Error al copiar el código (execCommand).");
-    }
-  } catch (err) {
-    console.error("Fallback: Error inesperado al copiar el código.", err);
-  }
-  document.body.removeChild(textArea);
-}
-
-// Añadir aquí las funciones openVideoModal, openPreviewModal si las necesitas
-// function openVideoModal(videoUrl) {
-//   // Lógica para abrir un modal con el video
-//   alert(`Abriendo video: ${videoUrl}`);
-// }
-
-// function openPreviewModal(previewUrl) {
-//   // Lógica para abrir un modal con la previsualización (imagen/post)
-//   alert(`Abriendo previsualización: ${previewUrl}`);
-// }

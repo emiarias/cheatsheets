@@ -182,6 +182,31 @@
           Hoja de referencia rápida con las etiquetas mas comúnes de HTML.
         </p>
       </div>
+      <section class="row">
+        <div class="col-md-6 col-lg-4 ms-md-auto">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="filter"
+              ><i class="bi bi-search"></i
+            ></span>
+            <input
+              id="search-input"
+              type="text"
+              class="form-control"
+              placeholder="Buscar en la cheatsheet..."
+              aria-label="filter cheatsheet"
+              aria-describedby="filter"
+            />
+          </div>
+        </div>
+      </section>
+      <div
+        id="no-results-message"
+        class="alert alert-warning d-none"
+        role="alert"
+      >
+        No se encontraron coincidencias para tu búsqueda. Intenta con otra
+        palabra clave.
+      </div>
       <section class="row row-gap-3" id="cards-container"></section>
     </main>
     <footer class="py-4 container text-center small">
