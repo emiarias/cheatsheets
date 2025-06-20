@@ -34,13 +34,13 @@ export const cssCheatsheetData = [
   }
 &lt;/style&gt;
 
-&lt;p style="color: red;"&gt;Texto rojo&lt;/p&gt;`,
+&lt;p style="color: blue;"&gt;Texto azul&lt;/p&gt;`,
     bodyContent: null,
     bodyText:
       'Hay tres formas principales de vincular CSS a tu HTML. La más recomendada es la <b>externa</b> <code>&lt;link&gt;</code>, que mantiene tu código organizado. La interna <code>&lt;style&gt;</code> es para estilos específicos de una página, y  en línea <code>style=""</code> para cambios muy puntuales.<br>✔ Recomendación: Siempre busca usar archivos CSS externos. Facilita el mantenimiento y la reutilización de estilos.',
     footerLinkInformation:
       "https://developer.mozilla.org/es/docs/Web/CSS/Applying_CSS",
-    footerLinkDemo: null,
+    footerLinkDemo: 'https://codepen.io/emiarias/pen/raVqKZO',
     footerPreview: null,
     footerVideo: null,
     section: "Fundamentos CSS",
@@ -72,7 +72,7 @@ h1, p { text-align: center; }`,
       "Los selectores son la forma en que le decimos a CSS a qué elementos HTML aplicar estilos. Puedes seleccionar por tipo de etiqueta, por <strong>class</strong> (el más usado y flexible), por <strong>id</strong> (único por página), o todos los elementos. <br> 💡 Tip: Las clases ('.mi-clase') son tus mejores amigas para aplicar estilos a múltiples elementos similares y reutilizarlos.",
     footerLinkInformation:
       "https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors",
-    footerLinkDemo: null,
+    footerLinkDemo: 'https://codepen.io/emiarias/pen/EaxBpda',
     footerPreview: null,
     footerVideo: null,
     section: "Selectores",
@@ -110,7 +110,7 @@ p::first-line { font-weight: bold; }`,
       "Además de los básicos, CSS tiene selectores que te permiten apuntar a elementos basándose en sus relaciones con otros (descendientes, hermanos) o en su estado (hover, focus). <br>💡 Tip: Dominar estos selectores te dará un control increíble sobre tus estilos sin necesidad de añadir más clases a tu HTML",
     footerLinkInformation:
       "https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors",
-    footerLinkDemo: null,
+    footerLinkDemo: 'https://codepen.io/emiarias/pen/poMPxZq',
     footerPreview: null,
     footerVideo: null,
     section: "Selectores",
@@ -146,7 +146,7 @@ background-color: hsla(120, 100%, 50%, 0.7); /* Verde con 70% de opacidad */`,
       "CSS te da varias formas de especificar colores. Los nombres son simples, Hex y RGB son muy comunes, y RGBA/HSLA te permiten añadir transparencia (canal alfa).<br>💡 Tip: RGBA/HSLA son geniales para crear superposiciones semitransparentes o efectos de luz sutiles sin afectar la opacidad de los hijos.",
     footerLinkInformation:
       "https://developer.mozilla.org/es/docs/Web/CSS/color",
-    footerLinkDemo: null,
+    footerLinkDemo: 'https://codepen.io/emiarias/pen/PwqyBBY',
     footerPreview: null,
     footerVideo: null,
     section: "Colores y Fondos",
