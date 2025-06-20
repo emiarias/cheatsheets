@@ -8,7 +8,7 @@ export const jsCheatsheetData = [
     codeLanguage: "javascript",
     codeSnippet: `// Declaración de variables
 let nombre = "Juan"; // Variable mutable, ámbito de bloque
-const EDAD = 30;     // Constante, ámbito de bloque (no puede ser reasignada)
+const edad = 30;     // Constante, ámbito de bloque (no puede ser reasignada)
 var ciudad = "Tucumán"; // Variable mutable, ámbito de función (evitar usar)
 
 // Tipos de datos primitivos
