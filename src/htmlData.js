@@ -82,7 +82,7 @@ export const htmlCheatsheetData = [
     bodyText:
       "Las meta tags  <strong>meta</strong> le dan información importante al navegador sobre tu página (codificación, descripción, cómo se ve en móviles).<br> Los <strong>link</strong> se usan para conectar tu HTML con archivos externos como hojas de estilo CSS o el pequeño icono de la pestaña del navegador (favicon).",
 
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Learn_web_development/Core/Structuring_content/Webpage_metadata',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
@@ -198,7 +198,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
     bodyContent: null,
     bodyText:
       "Usar estas etiquetas ayuda a los lectores de pantalla y a los motores de búsqueda a entender mejor el contexto de tu contenido.",
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/blockquote',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
@@ -222,7 +222,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
     bodyContent: null,
     bodyText:
       'Los enlaces <strong>a</strong> son el corazón de la web, conectando páginas y recursos. El atributo `href` es su destino. <br>💡 Tip: Usa `target="_blank"` con `rel="noopener noreferrer"` para abrir enlaces externos en una nueva pestaña de forma segura.',
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/a',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
@@ -245,7 +245,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
     bodyContent: null,
     bodyText:
       "La etiqueta <strong>img</strong> es para insertar imágenes. El atributo <strong>src</strong> es la ruta a la imagen y <strong>alt</strong> es una descripción alternativa crucial para la accesibilidad (¡y SEO!).<br> <strong>figure</strong> y <strong>figcaption</strong> se usan para imágenes con una leyenda.",
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/img',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
@@ -266,7 +266,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
     bodyContent: null,
     bodyText:
       "Las listas no ordenadas se usan para agrupar elementos que no tienen un orden específico, como una lista de características o ingredientes.",
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/ul',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
@@ -292,7 +292,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
     bodyContent: null,
     bodyText:
       "Las listas ordenadas se utilizan para elementos que sí tienen un orden específico, como pasos en una receta o un ranking. Puedes personalizar el tipo de marcador (type) y el inicio (start)",
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/ol',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
@@ -314,7 +314,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
     bodyContent: null,
     bodyText: `Las listas de definiciones son perfectas para glosarios o listas de preguntas y respuestas. Tienen un término (dt) y su descripción (dd).
     <br>💡 Tip: Son muy útiles para estructurar pares de información clave-valor, como en un diccionario o una sección de 'Preguntas Frecuentes'.`,
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/dl',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
@@ -355,7 +355,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
 &lt;/table&gt;`,
     bodyContent: null,
     bodyText: null,
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Web/API/HTMLTableElement',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
@@ -487,7 +487,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
     bodyContent: null,
     bodyText:
       "El <strong>form</strong> es el contenedor principal para todos los controles de entrada del usuario. Los <strong>label</strong> asocian texto a los <strong>input</strong> (muy importante para la accesibilidad).",
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/form',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
@@ -522,7 +522,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
 &lt;/select&gt;`,
     bodyContent: null,
     bodyText: null,
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/input',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
@@ -584,7 +584,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
 </audio>`,
     bodyText:
       "Esta etiqueta te permite insertar archivos de sonido directamente en tu página web. El atributo <b>controls</b> muestra los controles de reproducción, <b>loop</b> lo repite, <b>autoplay</b> lo inicia automáticamente y <b>muted</b> lo silencia por defecto",
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/input',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
@@ -606,7 +606,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
   Tu navegador no soporta video.
 </video>`,
     bodyText: `Con <strong>video</strong>, puedes integrar vídeos en tu sitio. <b>controls</b> muestra la barra de reproducción  y <b>poster</b> es una imagen de previsualización. <br>💡 Tip: Al igual que con el audio, usa múltiples <strong>source</strong> para ofrecer tu video en diferentes formatos (.mp4, .webm) y asegurar la compatibilidad con varios navegadores.`,
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/video',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
@@ -630,7 +630,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
 &lt;/iframe&gt;`,
     bodyContent: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14240.859733970994!2d-65.21414151420274!3d-26.833115279836335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c0febbe97db%3A0x65937e9ca09416ef!2sMuseo%20casa%20hist%C3%B3rica%20de%20la%20Independencia%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1750085099719!5m2!1ses-419!2sar" height="250" class="w-100" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
     bodyText: 'Los <source>iframe<source> te permiten incrustar otra página web o contenido de otra fuente (como videos de YouTube o mapas de Google) directamente en tu documento HTML. <br>💡 Tip: Aunque son muy útiles, úsalos con precaución, ya que pueden afectar el rendimiento y la seguridad de tu página. Siempre verifica la fuente del contenido que embebes',
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/iframe',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
@@ -654,7 +654,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
 &amp;euro; &lt;!-- Símbolo de Euro (€) --&gt;`,
     bodyContent: null,
     bodyText: `Las entidades HTML son códigos especiales que representan caracteres que de otra forma serían difíciles de escribir o podrían ser interpretados como parte del código HTML. <br>Son esenciales para mostrar caracteres como '<' o '>' que tienen un significado especial en HTML.`,
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Glossary/Entity',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
@@ -697,7 +697,7 @@ con varias líneas.&lt;/code&gt;&lt;/pre&gt;
     bodyContent: null,
     bodyText:
       "Este conjunto de meta tags es fundamental para cualquier página HTML. Incluye la codificación de caracteres, el título del documento, las descripciones y URLs para SEO y compartir en redes, y la configuración del viewport para asegurar la correcta visualización en todos los dispositivos.",
-    footerLinkInformation: null,
+    footerLinkInformation: 'https://developer.mozilla.org/es/docs/Web/HTML/Reference/Elements/meta',
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
