@@ -4,8 +4,8 @@ import { jsCheatsheetData } from "./data/jsData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const cardsContainer = document.getElementById("cards-container");
-  const searchInput = document.getElementById("search-input"); 
-  const noResultsMessage = document.getElementById("no-results-message"); 
+  const searchInput = document.getElementById("search-input");
+  const noResultsMessage = document.getElementById("no-results-message");
 
   if (!cardsContainer) {
     console.warn(
@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  let allCheatsheetData = []; 
-  let filteredCheatsheetData = []; 
+  let allCheatsheetData = [];
+  let filteredCheatsheetData = [];
   const currentPagePath = window.location.pathname;
 
   if (currentPagePath.includes("/cheatsheets-html.html")) {
@@ -27,27 +27,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   filteredCheatsheetData = [...allCheatsheetData];
-  renderCards(filteredCheatsheetData); 
+  renderCards(filteredCheatsheetData);
 
   // --- Funcionalidad de Búsqueda ---
   if (searchInput) {
     searchInput.addEventListener("input", (event) => {
-      const searchTerm = event.target.value.toLowerCase().trim(); 
+      const searchTerm = event.target.value.toLowerCase().trim();
       filterAndRenderCards(searchTerm);
     });
   }
 
   function filterAndRenderCards(searchTerm) {
     if (searchTerm === "") {
-      filteredCheatsheetData = [...allCheatsheetData]; 
+      filteredCheatsheetData = [...allCheatsheetData];
     } else {
-      filteredCheatsheetData = allCheatsheetData.filter(cardData => {
+      filteredCheatsheetData = allCheatsheetData.filter((cardData) => {
         const searchableContent = `
-          ${cardData.headerTitle || ''}
-          ${cardData.bodyText || ''}
-          ${cardData.codeSnippet || ''}
-          ${cardData.section || ''}
-          ${cardData.id || ''}
+          ${cardData.headerTitle || ""}
+          ${cardData.bodyText || ""}
+          ${cardData.codeSnippet || ""}
+          ${cardData.section || ""}
+          ${cardData.id || ""}
         `.toLowerCase();
         return searchableContent.includes(searchTerm);
       });
@@ -57,18 +57,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- Función principal para renderizar las cards ---
   function renderCards(dataToRender) {
-    cardsContainer.innerHTML = ''; 
+    cardsContainer.innerHTML = "";
 
     if (dataToRender.length === 0) {
-      noResultsMessage.classList.remove('d-none'); 
+      noResultsMessage.classList.remove("d-none");
     } else {
-      noResultsMessage.classList.add('d-none'); 
+      noResultsMessage.classList.add("d-none");
     }
 
     // Agrupar y cargar las cards por sección
     const sections = {};
 
-    dataToRender.forEach((cardData) => { 
+    dataToRender.forEach((cardData) => {
       const sectionName = cardData.section || "Sin Sección";
       const sectionOrder = cardData.order || 999;
 
@@ -126,7 +126,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return new bootstrap.Tooltip(tooltipTriggerEl);
       });
     } else {
-      console.warn("Bootstrap JS no cargado o no se pudo inicializar tooltips.");
+      console.warn(
+        "Bootstrap JS no cargado o no se pudo inicializar tooltips."
+      );
     }
   }
 
@@ -289,9 +291,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateCopyButtonUI(button) {
     const iconElement = button.querySelector("i");
     const originalClass = iconElement.className;
-    iconElement.className = "bi bi-check-lg"; 
+    iconElement.className = "bi bi-check-lg";
     setTimeout(() => {
-      iconElement.className = originalClass; 
+      iconElement.className = originalClass;
     }, 2000);
   }
 
