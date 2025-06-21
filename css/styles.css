@@ -1,4 +1,4 @@
-:root{
+:root {
   --color-primary: #6366f1;
 }
 
@@ -47,7 +47,7 @@ main {
   color: #fff !important;
 }
 
-.navbar-logo{
+.navbar-logo {
   color: var(--color-primary);
 }
 
@@ -124,15 +124,52 @@ main {
   width: 100%;
 }
 
-.container-img{
+.container-img {
   overflow: hidden;
- 
 }
-.img-zoom{
-   transition: 300ms;
-   filter: brightness(0.8);
+.img-zoom {
+  transition: 300ms;
+  filter: brightness(0.8);
 }
-.img-zoom:hover{
+.img-zoom:hover {
   transform: scale(1.2);
   filter: brightness(1);
+}
+
+/* Estilos cards home */
+.bg-orange {
+  background: linear-gradient(to bottom, #f19029, #f47e1f);
+}
+.bg-blue {
+  background: linear-gradient(135deg, #5898dd, #0056b3);
+}
+.bg-yellow {
+  background: linear-gradient(135deg, #34301c, #0c0b05);
+}
+
+.tilt-card {
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.tilt-inner {
+  transform: translateZ(40px);
+}
+
+.tilt-card:hover {
+  transform: scale(1.03);
+}
+
+.card-logo {
+  width: 200px;
+  max-height: 100px;
+}
+
+.link-card-logo{
+  text-decoration: none;
 }

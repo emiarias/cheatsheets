@@ -125,9 +125,7 @@
                 <a class="nav-link" href="./pages/cheatsheets-css.html">CSS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/cheatsheets-js.html"
-                  >JS</a
-                >
+                <a class="nav-link" href="./pages/cheatsheets-js.html">JS</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" href="./pages/aboutme.html"
@@ -229,64 +227,78 @@
       </section>
       <section class="row row-gap-4 mt-4">
         <div class="col-md-6 col-lg-4">
-          <div class="card">
-            <div class="container-img">
-              <a href="./pages/cheatsheets-html.html">
+          <a href="./pages/cheatsheets-html.html" class="link-card-logo">
+            <div
+              class="card text-center bg-orange tilt-card border-0"
+              data-tilt
+              data-tilt-glare
+              data-tilt-max-glare="0.8"
+              data-tilt-max="20"
+              data-tilt-perspective="1000"
+              data-tilt-speed="400"
+            >
+              <div class="card-body">
                 <img
-                  src="./assets/img/1.png"
-                  class="card-img-top img-zoom"
-                  alt="cheatsheet html"
+                  src="./assets/img/html5-rectangle.svg"
+                  alt="Logo HTML5"
+                  class="card-logo"
                 />
-              </a>
+              </div>
+              <div class="card-footer border-0 ">
+                <p class="fw-bold mt-3 text-light">Ver cheatsheet</p>
+              </div>
             </div>
-            <div class="card-body ms-auto">
-              <a
-                href="./pages/cheatsheets-html.html"
-                class="text-underline link-body-emphasis"
-                >Ver cheatsheet</a
-              >
-            </div>
-          </div>
+          </a>
         </div>
         <div class="col-md-6 col-lg-4">
-          <div class="card">
-            <div class="container-img">
-              <a href="./pages/cheatsheets-css.html">
+          <a href="./pages/cheatsheets-css.html" class="link-card-logo">
+            <div
+              class="card text-center bg-blue tilt-card border-0"
+              data-tilt
+              data-tilt-glare
+              data-tilt-max-glare="0.8"
+              data-tilt-max="20"
+              data-tilt-perspective="1000"
+              data-tilt-speed="400"
+            >
+              <div class="card-body">
                 <img
-                  src="./assets/img/2.png"
-                  class="card-img-top img-zoom"
-                  alt="cheatsheet css"
+                  src="./assets/img/css-icon.svg"
+                  alt="Logo CSS"
+                  class="card-logo"
                 />
-              </a>
+              </div>
+              <div class="card-footer border-0 ">
+                <p class="fw-bold mt-3 text-light">Ver cheatsheet</p>
+              </div>
             </div>
-            <div class="card-body ms-auto">
-              <a
-                href="./pages/cheatsheets-css.html"
-                class="text-underline link-body-emphasis"
-                >Ver cheatsheet</a
-              >
-            </div>
-          </div>
+          </a>
         </div>
         <div class="col-md-6 col-lg-4">
-          <div class="card">
-            <div class="container-img">
-              <a href="./pages/cheatsheets-js.html">
+          <a href="./pages/cheatsheets-js.html" class="link-card-logo">
+            <div
+              class="card text-center bg-yellow tilt-card border-0"
+              data-tilt
+              data-tilt-glare
+              data-tilt-max-glare="0.8"
+              data-tilt-max="20"
+              data-tilt-perspective="1000"
+              data-tilt-speed="400"
+            >
+              <div class="card-body">
                 <img
-                  src="./assets/img/3.png"
-                  class="card-img-top img-zoom"
-                  alt="cheatsheet js"
+                  src="./assets/img/javascript-icon.svg"
+                  alt="Logo JS"
+                  class="card-logo"
                 />
-              </a>
+              </div>
+              <div class="card-footer border-0 ">
+                <p class="fw-bold mt-3 text-light">Ver cheatsheet</p>
+              </div>
             </div>
-            <div class="card-body ms-auto">
-              <a href="./pages/cheatsheets-js.html" class="text-underline link-body-emphasis"
-                >Ver cheatsheet</a
-              >
-            </div>
-          </div>
+          </a>
         </div>
-      </section>
+        </section>
     </main>
     <footer class="py-4 container text-center small">
       <p class="text-muted">
@@ -305,6 +317,8 @@
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
       crossorigin="anonymous"
     ></script>
+
+    <script src="./src/vanilla-tilt.min.js"></script>
     <script src="./src/app.js"></script>
   </body>
 </html>
