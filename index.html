@@ -50,18 +50,15 @@
         const effectiveTheme =
           savedTheme === "auto" ? getSystemTheme() : savedTheme;
         document.documentElement.setAttribute("data-bs-theme", effectiveTheme);
-        const prismThemeLink = document.createElement("link");
-        prismThemeLink.id = "prism-theme-link";
-        prismThemeLink.rel = "stylesheet";
-        prismThemeLink.href =
-          effectiveTheme === "dark"
-            ? "./css/prism.css"
-            : "./css/prism-default.css";
-        document.head.appendChild(prismThemeLink);
       })();
     </script>
     <!-- favicon -->
-    <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96"/>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./favicon-96x96.png"
+      sizes="96x96"
+    />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="shortcut icon" href="./favicon.ico" />
     <link
