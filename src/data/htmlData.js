@@ -1,4 +1,4 @@
-// js/htmlData.js
+// js//data/htmlData.js
 
 export const htmlCheatsheetData = [
   {

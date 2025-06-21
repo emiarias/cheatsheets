@@ -1,6 +1,6 @@
-import { htmlCheatsheetData } from "./htmlData.js";
-import { cssCheatsheetData } from "./cssData.js";
-import { jsCheatsheetData } from "./jsData.js";
+import { htmlCheatsheetData } from "./data/htmlData.js";
+import { cssCheatsheetData } from "./data/cssData.js";
+import { jsCheatsheetData } from "./data/jsData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const cardsContainer = document.getElementById("cards-container");
