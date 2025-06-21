@@ -14,24 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return "dark";
   };
 
-  const systemTheme = getSystemTheme();
-  const savedTheme = localStorage.getItem("theme") || "auto"; 
-  const initialEffectiveTheme =
-    savedTheme === "auto" ? systemTheme : savedTheme;
-
-  // Aplicar tema inicial al cargar la página
-  document.documentElement.setAttribute("data-bs-theme", initialEffectiveTheme);
-  updateThemeUI(savedTheme, initialEffectiveTheme);
-
   // Manejador de eventos para el selector de tema (dropdown)
   dropdownItems.forEach((item) => {
     item.addEventListener("click", () => {
       const selectedTheme = item.getAttribute("data-bs-theme-value");
-      localStorage.setItem("theme", selectedTheme); 
+      localStorage.setItem("theme", selectedTheme);
       const effectiveTheme =
         selectedTheme === "auto" ? getSystemTheme() : selectedTheme;
-      document.documentElement.setAttribute("data-bs-theme", effectiveTheme); 
-      updateThemeUI(selectedTheme, effectiveTheme); 
+      document.documentElement.setAttribute("data-bs-theme", effectiveTheme);
+      updateThemeUI(selectedTheme, effectiveTheme);
     });
   });
 
