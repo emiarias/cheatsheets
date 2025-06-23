@@ -1,6 +1,7 @@
 import { htmlCheatsheetData } from "./data/htmlData.js";
 import { cssCheatsheetData } from "./data/cssData.js";
 import { jsCheatsheetData } from "./data/jsData.js";
+import { reactCheatsheetData } from "./data/reactData.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const cardsContainer = document.getElementById("cards-container");
@@ -24,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
     allCheatsheetData = jsCheatsheetData;
   } else if (currentPagePath.includes("/cheatsheets-css.html")) {
     allCheatsheetData = cssCheatsheetData;
+  }else if (currentPagePath.includes("/cheatsheets-react.html")) {
+    allCheatsheetData = reactCheatsheetData;
   }
 
   filteredCheatsheetData = [...allCheatsheetData];
