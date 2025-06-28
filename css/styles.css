@@ -170,6 +170,10 @@ main {
   transform: scale(1.2);
   filter: brightness(1);
 }
+/* cards data */
+.card-footer{
+  min-height: 55px;
+}
 
 /* Estilos cards home */
 .bg-orange {
