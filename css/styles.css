@@ -52,7 +52,9 @@ main {
 [data-bs-theme="light"] .hero-section{
    background-color: rgba(222, 226, 230, 0.7);
 } 
-
+.github-badge {
+    vertical-align: sub;
+}
 
 
 /* --- Navbar --- */
