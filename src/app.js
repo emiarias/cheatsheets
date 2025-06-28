@@ -4,6 +4,21 @@ document.addEventListener("DOMContentLoaded", () => {
     ".dropdown-item[data-bs-theme-value]"
   );
   const prismThemeLink = document.getElementById("prism-theme-link");
+  const btnUp = document.getElementById("btnUp");
+
+  window.onscroll = function () {
+    if (document.documentElement.scrollTop > 200 || document.body.scrollTop > 200) {
+      btnUp.classList.add("show");
+    } else {
+      btnUp.classList.remove("show");
+    }
+  };
+
+  btnUp.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"});
+  });
 
   const getSystemTheme = () => {
     if (window.matchMedia) {
