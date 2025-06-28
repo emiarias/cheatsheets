@@ -225,22 +225,7 @@ main {
     justify-content: center;
     padding: 0.75rem; 
 }
-
 #btnUp.show {
     opacity: 1;        
     visibility: visible; 
 }
-
-
-/* Puedes personalizar el color del botón si no quieres el btn-primary */
-/* Por ejemplo, si lo quieres con el color de tu footer (oscuro verdoso) */
-/*
-#btnVolverArriba.btn-primary {
-    background-color: #28a745; // Ejemplo de un verde oscuro
-    border-color: #28a745;
-}
-#btnVolverArriba.btn-primary:hover {
-    background-color: #218838; // Un verde ligeramente más oscuro al pasar el ratón
-    border-color: #1e7e34;
-}
-*/
