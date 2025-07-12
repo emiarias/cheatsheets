@@ -253,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
         demoButton.setAttribute("data-bs-toggle", "tooltip");
         demoButton.setAttribute("data-bs-placement", "top");
         demoButton.setAttribute("data-bs-title", "Ver Demo");
-        demoButton.innerHTML = '<i class="bi bi-code-slash"></i>';
+        demoButton.innerHTML = '<i class="bi bi-play-fill"></i>';
         buttonsContainer.appendChild(demoButton);
       }
 
