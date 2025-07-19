@@ -1106,7 +1106,7 @@ if (todosLosElementos.length > 0) {
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
-    section: "DOM",
+    section: "DOM y BOM",
     order: 33,
   },
   {
@@ -1152,7 +1152,7 @@ lista.appendChild(nuevoElemento); // Añadir al final
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
-    section: "DOM",
+    section: "DOM y BOM",
     order: 34,
   },
   {
@@ -1193,9 +1193,403 @@ boton.addEventListener('click', handleClick);
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
-    section: "DOM",
+    section: "DOM y BOM",
     order: 35,
   },
+  // --- BOM (Browser Object Model) ---
+  {
+    id: "js-bom-window",
+    colClasses: "col-md-6",
+    headerIcon: "🌐",
+    headerTitle: "Objeto Window (BOM)",
+    codeLanguage: "javascript",
+    codeSnippet: `// El objeto global del lado del cliente
+console.log(window); // Representa la ventana del navegador
+
+// Propiedades comunes
+console.log(window.innerHeight); // Altura del viewport
+console.log(window.innerWidth);  // Ancho del viewport
+console.log(window.location.href); // URL actual
+
+// Métodos comunes
+window.alert("¡Hola desde el navegador!"); // Muestra un cuadro de alerta
+window.confirm("¿Estás seguro?"); // Muestra un cuadro de confirmación
+window.prompt("Ingresa tu nombre:"); // Muestra un cuadro de entrada de texto
+
+// Redireccionar
+window.location.href = "https://www.google.com";
+window.location.assign("https://www.google.com"); // Carga nueva URL
+window.location.replace("https://www.google.com"); // Reemplaza la URL actual (no se puede volver con el botón de atrás)
+
+// Abrir una nueva ventana/tab
+const nuevaVentana = window.open("https://www.example.com", "_blank", "width=500,height=400");
+if (nuevaVentana) {
+  nuevaVentana.focus();
+}
+
+// Scroll programático
+window.scrollTo(0, 500); // Scroll a 500px hacia abajo
+window.scrollBy(0, 100); // Scroll 100px desde la posición actual`,
+    bodyContent: null,
+    bodyText:
+      "El objeto <strong>Window</strong> es el objeto global que representa la ventana del navegador que contiene el documento. Es la raíz de todo el BOM y permite interactuar con la ventana, el documento y la pantalla. Sus propiedades y métodos permiten controlar la ventana del navegador.",
+    footerLinkInformation:
+      "https://developer.mozilla.org/es/docs/Web/API/Window",
+    footerLinkDemo: null,
+    footerPreview: null,
+    footerVideo: null,
+    section: "DOM y BOM",
+    order: 36,
+  },
+//   {
+//     id: "js-bom-navigator-screen",
+//     colClasses: "col-md-6",
+//     headerIcon: "🖥️",
+//     headerTitle: "Objetos Navigator y Screen (BOM)",
+//     codeLanguage: "javascript",
+//     codeSnippet: `// Objeto Navigator: información del navegador
+// console.log(navigator.userAgent);     // Cadena User-Agent del navegador
+// console.log(navigator.platform);      // Plataforma del navegador (e.g., "Win32", "MacIntel")
+// console.log(navigator.cookieEnabled); // true si las cookies están habilitadas
+// console.log(navigator.onLine);        // true si el navegador está online
+
+// // Objeto Screen: información de la pantalla del usuario
+// console.log(screen.width);         // Ancho total de la pantalla en píxeles
+// console.log(screen.height);        // Altura total de la pantalla en píxeles
+// console.log(screen.availWidth);    // Ancho disponible para la ventana (excluyendo barras de tareas)
+// console.log(screen.availHeight);   // Altura disponible para la ventana`,
+//     bodyContent: null,
+//     bodyText:
+//       "El objeto <strong>Navigator</strong> proporciona información sobre el navegador del usuario (nombre, versión, plataforma, etc.). El objeto <strong>Screen</strong> contiene información sobre la pantalla del usuario, como sus dimensiones y profundidad de color. Son útiles para la detección de características o análisis.",
+//     footerLinkInformation:
+//       "https://developer.mozilla.org/es/docs/Web/API/Navigator",
+//     footerLinkDemo: null,
+//     footerPreview: null,
+//     footerVideo: null,
+//     section: "DOM y BOM",
+//     order: 37,
+//   },
+//   {
+//     id: "js-bom-history-location",
+//     colClasses: "col-md-6",
+//     headerIcon: "📍",
+//     headerTitle: "Objetos History y Location (BOM)",
+//     codeLanguage: "javascript",
+//     codeSnippet: `// Objeto Location: información y control de la URL actual
+// console.log(location.href);     // URL completa
+// console.log(location.protocol); // Protocolo (ej: "http:", "https:")
+// console.log(location.host);     // Nombre del host y puerto
+// console.log(location.pathname); // Ruta del archivo
+// console.log(location.search);   // Cadena de consulta (query string)
+// console.log(location.hash);     // Fragmento (hash)
+
+// // Modificar URL (provoca navegación)
+// location.href = "nueva_pagina.html"; // Redireccionar
+// location.reload(); // Recargar la página actual
+
+// // Objeto History: historial de navegación de la sesión
+// history.back();    // Navegar a la página anterior en el historial
+// history.forward(); // Navegar a la página siguiente
+// history.go(-2);    // Ir dos páginas atrás
+// console.log(history.length); // Número de entradas en el historial
+
+// // history.pushState() y history.replaceState() para manipular el historial
+// // Útil en SPAs (Single Page Applications) para cambiar la URL sin recargar
+// history.pushState({ page: 1 }, "Título página 1", "/pagina1");
+// console.log(location.pathname); // Salida: /pagina1
+// history.replaceState({ page: 2 }, "Título página 2", "/pagina2");
+// console.log(location.pathname); // Salida: /pagina2`,
+//     bodyContent: null,
+//     bodyText:
+//       "El objeto <strong>Location</strong> permite acceder a la URL actual del documento y navegar a otras URLs. El objeto <strong>History</strong> permite acceder al historial de navegación de la ventana. Ambos son fundamentales para la navegación y la manipulación de la URL en aplicaciones web.",
+//     footerLinkInformation:
+//       "https://developer.mozilla.org/es/docs/Web/API/Location",
+//     footerLinkDemo: null,
+//     footerPreview: null,
+//     footerVideo: null,
+//     section: "DOM y BOM",
+//     order: 38,
+//   },
+// --- Asincronismo Básico (Timers) ---
+  {
+    id: "js-async-settimeout",
+    colClasses: "col-md-6 col-lg-4",
+    headerIcon: "⏳",
+    headerTitle: "setTimeout()",
+    codeLanguage: "javascript",
+    codeSnippet: `// Ejecuta una función una vez, después de un retardo
+console.log("Inicio de setTimeout");
+
+const timeoutId = setTimeout(() => {
+  console.log("¡Han pasado 2 segundos!");
+}, 2000); // 2000 milisegundos = 2 segundos
+
+console.log("setTimeout programado.");
+
+// Para cancelar el timeout antes de que se ejecute
+// clearTimeout(timeoutId);
+// console.log("Timeout cancelado (si se llamó antes de 2s).");
+
+// setTimeout con argumentos para la función callback
+setTimeout((name, age) => {
+  console.log(\`Hola, soy \${name} y tengo \${age} años.\`);
+}, 1000, "Ana", 30); // Argumentos pasados después del delay`,
+    bodyContent: null,
+    bodyText:
+      "La función `setTimeout()` ejecuta un bloque de código o una función **una única vez** después de un retardo especificado en milisegundos. Devuelve un `ID` numérico que puedes usar con `clearTimeout()` para cancelar la ejecución pendiente.",
+    footerLinkInformation:
+      "https://developer.mozilla.org/es/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout",
+    footerLinkDemo: null,
+    footerPreview: null,
+    footerVideo: null,
+    section: "Asincronismo Básico",
+    order: 37,
+  },
+  {
+    id: "js-async-setinterval",
+    colClasses: "col-md-6 col-lg-4",
+    headerIcon: "⏰",
+    headerTitle: "setInterval()",
+    codeLanguage: "javascript",
+    codeSnippet: `// Ejecuta una función repetidamente, con un retardo fijo entre llamadas
+let count = 0;
+const intervalId = setInterval(() => {
+  count++;
+  console.log(\`Intervalo ejecutado: \${count} veces\`);
+
+  if (count >= 3) {
+    clearInterval(intervalId); // Detener el intervalo después de 3 ejecuciones
+    console.log("Intervalo detenido.");
+  }
+}, 1000); // Se ejecuta cada 1000 milisegundos (1 segundo)
+
+console.log("setInterval programado.");`,
+    bodyContent: null,
+    bodyText:
+      "La función `setInterval()` ejecuta un bloque de código o una función **repetidamente** cada cierto intervalo de tiempo en milisegundos. Devuelve un `ID` numérico que debes usar con `clearInterval()` para detener la ejecución repetida y evitar fugas de memoria.",
+    footerLinkInformation:
+      "https://developer.mozilla.org/es/docs/Web/API/WindowOrWorkerGlobalScope/setInterval",
+    footerLinkDemo: null,
+    footerPreview: null,
+    footerVideo: null,
+    section: "Asincronismo Básico",
+    order: 38,
+  },
+  // --- Objeto Date ---
+  {
+    id: "js-date-creacion",
+    colClasses: "col-md-6 col-lg-4",
+    headerIcon: "📅",
+    headerTitle: "Creación de Fechas (Date)",
+    codeLanguage: "javascript",
+    codeSnippet: `// 1. Fecha actual (sin argumentos)
+const now = new Date();
+console.log(now); // Salida: La fecha y hora actual (ej: Thu Jul 18 2025 11:11:38 GMT-0300 (Argentina Standard Time))
+
+// 2. Con una cadena de fecha (formato ISO 8601 o fecha legible)
+const specificDate = new Date("2024-03-15T10:30:00Z"); // UTC
+console.log(specificDate); // Salida: Fri Mar 15 2024 07:30:00 GMT-0300 (Argentina Standard Time) (ajustado a la zona horaria local)
+
+const anotherDate = new Date("March 15, 2024 10:30:00"); // Zona horaria local por defecto
+console.log(anotherDate); // Salida: Fri Mar 15 2024 10:30:00 GMT-0300 (Argentina Standard Time)
+
+// 3. Con argumentos numéricos (Año, Mes, Día, Hora, Minuto, Segundo, Milisegundo)
+// Meses son 0-indexados (0 = Enero, 11 = Diciembre)
+const y2k = new Date(2000, 0, 1, 0, 0, 0, 0); // Enero 1, 2000, 00:00:00
+console.log(y2k); // Salida: Sat Jan 01 2000 00:00:00 GMT-0300 (Argentina Standard Time)
+
+const christmas = new Date(2025, 11, 25); // Diciembre 25, 2025
+console.log(christmas); // Salida: Thu Dec 25 2025 00:00:00 GMT-0300 (Argentina Standard Time)
+
+// 4. Con un timestamp (milisegundos desde la 'Época Unix' - 1 de enero de 1970, UTC)
+const epochTime = new Date(0);
+console.log(epochTime); // Salida: Wed Dec 31 1969 21:00:00 GMT-0300 (Argentina Standard Time) (ajustado a la zona horaria local)
+
+const tenSecondsLater = new Date(10 * 1000); // 10 segundos después del 1 de enero de 1970 UTC
+console.log(tenSecondsLater); // Salida: Wed Dec 31 1969 21:00:10 GMT-0300 (Argentina Standard Time)`,
+    bodyContent: null,
+    bodyText:
+      "El objeto `Date` permite trabajar con fechas y horas. Se puede crear una fecha actual, a partir de una cadena de texto, especificando componentes numéricos (recordando que los meses son base 0) o a partir de un timestamp.",
+    footerLinkInformation:
+      "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    footerLinkDemo: null,
+    footerPreview: null,
+    footerVideo: null,
+    section: "Objeto Date",
+    order: 39,
+  },
+  {
+    id: "js-date-obtener-componentes",
+    colClasses: "col-md-6 col-lg-4",
+    headerIcon: "🗓️",
+    headerTitle: "Obtener Componentes de Fecha",
+    codeLanguage: "javascript",
+    codeSnippet: `const d = new Date(); // Fecha y hora actual
+
+// Componentes locales
+console.log(d.getFullYear()); // Año (ej: 2025)
+console.log(d.getMonth());    // Mes (0-11, 0=Enero)
+console.log(d.getDate());     // Día del mes (1-31)
+console.log(d.getDay());      // Día de la semana (0-6, 0=Domingo)
+console.log(d.getHours());    // Hora (0-23)
+console.log(d.getMinutes());  // Minutos (0-59)
+console.log(d.getSeconds());  // Segundos (0-59)
+console.log(d.getMilliseconds()); // Milisegundos (0-999)
+console.log(d.getTime());     // Milisegundos desde la época Unix
+
+// Componentes UTC (Universal Coordinated Time)
+console.log(d.getUTCFullYear());
+console.log(d.getUTCMonth());
+console.log(d.getUTCDate());
+console.log(d.getUTCDay());
+console.log(d.getUTCHours());
+console.log(d.getUTCMinutes());
+console.log(d.getUTCSeconds());
+console.log(d.getUTCMilliseconds());`,
+    bodyContent: null,
+    bodyText:
+      "Los métodos `get*()` permiten extraer los componentes individuales de una fecha, tanto en la zona horaria local del usuario como en UTC. Recuerda que `getMonth()` devuelve un valor de 0 a 11 y `getDay()` de 0 a 6 (Domingo a Sábado).",
+    footerLinkInformation:
+      "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear",
+    footerLinkDemo: null,
+    footerPreview: null,
+    footerVideo: null,
+    section: "Objeto Date",
+    order: 40,
+  },
+  {
+    id: "js-date-establecer-componentes",
+    colClasses: "col-md-6 col-lg-4",
+    headerIcon: "✏️",
+    headerTitle: "Establecer Componentes de Fecha",
+    codeLanguage: "javascript",
+    codeSnippet: `const d = new Date(); // Fecha y hora actual
+
+d.setFullYear(2026);
+d.setMonth(5);     // Junio (0-indexado)
+d.setDate(10);     // Día 10
+d.setHours(14);    // 14:00 (2 PM)
+d.setMinutes(30);
+d.setSeconds(45);
+d.setMilliseconds(123);
+
+console.log(d); // Salida: La fecha y hora modificada
+
+// Puedes establecer varios componentes a la vez con setFullYear, setMonth, setDate
+const anotherDate = new Date();
+anotherDate.setFullYear(2027, 8, 20); // Septiembre 20, 2027
+console.log(anotherDate);
+
+// Establecer timestamp
+const resetDate = new Date();
+resetDate.setTime(0); // Volver al Epoch Unix
+console.log(resetDate); // Salida: Wed Dec 31 1969 21:00:00 GMT-0300 (ajustado a zona horaria local)`,
+    bodyContent: null,
+    bodyText:
+      "Los métodos `set*()` permiten modificar los componentes de una fecha existente. Estos métodos mutan el objeto `Date` original. Al igual que los `get*()`, existen sus equivalentes `setUTC*()` para modificar en UTC.",
+    footerLinkInformation:
+      "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/setFullYear",
+    footerLinkDemo: null,
+    footerPreview: null,
+    footerVideo: null,
+    section: "Objeto Date",
+    order: 41,
+  },
+  {
+    id: "js-date-formateo",
+    colClasses: "col-md-6",
+    headerIcon: "✍️",
+    headerTitle: "Formateo de Fechas",
+    codeLanguage: "javascript",
+    codeSnippet: `const d = new Date();
+
+// Formato de cadena estándar (depende del navegador)
+console.log(d.toString());     // "Thu Jul 18 2025 11:11:38 GMT-0300 (Argentina Standard Time)"
+console.log(d.toDateString()); // "Thu Jul 18 2025"
+console.log(d.toTimeString()); // "11:11:38 GMT-0300 (Argentina Standard Time)"
+
+// Formato ISO
+console.log(d.toISOString());  // "2025-07-18T14:11:38.XXXZ" (UTC)
+
+// Formato local (depende del idioma del navegador/sistema)
+console.log(d.toLocaleString()); // "18/7/2025, 11:11:38"
+console.log(d.toLocaleDateString()); // "18/7/2025"
+console.log(d.toLocaleTimeString()); // "11:11:38"
+
+// Opciones de formato con toLocaleString (más control)
+const optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+console.log(d.toLocaleDateString('es-AR', optionsDate)); // "jueves, 18 de julio de 2025"
+
+const optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+console.log(d.toLocaleTimeString('es-AR', optionsTime)); // "11:11:38"
+
+const optionsDateTime = { year: 'numeric', month: 'numeric', day: 'numeric',
+                          hour: '2-digit', minute: '2-digit', second: '2-digit',
+                          timeZoneName: 'short' };
+console.log(d.toLocaleString('es-AR', optionsDateTime)); // "18/7/2025, 11:11:38 GMT-3"`,
+    bodyContent: null,
+    bodyText:
+      "JavaScript ofrece varios métodos para formatear objetos `Date` en cadenas de texto. Los métodos `to*String()` proporcionan formatos predeterminados. Para un control más preciso sobre el idioma, el estilo y la zona horaria, se recomienda `toLocaleString()`, `toLocaleDateString()` y `toLocaleTimeString()`.",
+    footerLinkInformation:
+      "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString",
+    footerLinkDemo: null,
+    footerPreview: null,
+    footerVideo: null,
+    section: "Objeto Date",
+    order: 42,
+  },
+  {
+    id: "js-date-operaciones-calculos",
+    colClasses: "col-md-6",
+    headerIcon: "➕➖",
+    headerTitle: "Operaciones y Cálculos con Fechas",
+    codeLanguage: "javascript",
+    codeSnippet: `const date1 = new Date("2025-01-01T10:00:00Z"); // UTC
+const date2 = new Date("2025-01-05T12:00:00Z"); // UTC
+
+// Diferencia entre fechas (en milisegundos)
+const diffMs = date2.getTime() - date1.getTime();
+console.log(\`Diferencia en milisegundos: \${diffMs}\`); // Salida: 352800000
+
+const diffSeconds = diffMs / 1000;
+const diffMinutes = diffSeconds / 60;
+const diffHours = diffMinutes / 60;
+const diffDays = diffHours / 24;
+
+console.log(\`Diferencia en días: \${diffDays}\`); // Salida: 4.083... (4 días y 2 horas)
+
+// Sumar/restar tiempo
+const futureDate = new Date();
+futureDate.setDate(futureDate.getDate() + 7); // Sumar 7 días
+console.log("Fecha dentro de 7 días:", futureDate);
+
+const pastDate = new Date();
+pastDate.setHours(pastDate.getHours() - 3); // Restar 3 horas
+console.log("Fecha hace 3 horas:", pastDate);
+
+// Comparar fechas
+const today = new Date();
+const tomorrow = new Date();
+tomorrow.setDate(today.getDate() + 1);
+
+console.log("¿Es hoy menor que mañana?", today < tomorrow); // Salida: true
+console.log("¿Son hoy y mañana la misma fecha?", today.getTime() === tomorrow.getTime()); // Salida: false
+
+// Métodos estáticos de Date
+console.log(Date.now()); // Milisegundos actuales desde el Epoch Unix
+console.log(Date.parse("2025-07-18")); // Parsea una cadena y devuelve milisegundos`,
+    bodyContent: null,
+    bodyText:
+      "Las fechas se pueden comparar y manipular. La resta de dos objetos `Date` devuelve la diferencia en milisegundos, permitiendo calcular diferencias en otras unidades. Los métodos `set*()` también son útiles para sumar o restar tiempo, y `Date.now()` es práctico para obtener el timestamp actual.",
+    footerLinkInformation:
+      "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime",
+    footerLinkDemo: null,
+    footerPreview: null,
+    footerVideo: null,
+    section: "Objeto Date",
+    order: 43,
+  },
+
 
   // --- JSON ---
   {
@@ -1235,6 +1629,6 @@ console.log(nuevoJsonString);
     footerPreview: null,
     footerVideo: null,
     section: "JSON",
-    order: 36,
+    order: 44,
   },
 ];
