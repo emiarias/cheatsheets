@@ -1313,7 +1313,7 @@ window.scrollBy(0, 100); // Scroll 100px desde la posición actual`,
 // --- Asincronismo Básico (Timers) ---
   {
     id: "js-async-settimeout",
-    colClasses: "col-md-6 col-lg-4",
+    colClasses: "col-md-6",
     headerIcon: "⏳",
     headerTitle: "setTimeout()",
     codeLanguage: "javascript",
@@ -1336,18 +1336,18 @@ setTimeout((name, age) => {
 }, 1000, "Ana", 30); // Argumentos pasados después del delay`,
     bodyContent: null,
     bodyText:
-      "La función `setTimeout()` ejecuta un bloque de código o una función **una única vez** después de un retardo especificado en milisegundos. Devuelve un `ID` numérico que puedes usar con `clearTimeout()` para cancelar la ejecución pendiente.",
+      "El método <strong>setTimeout()</strong> del objeto window, ejecuta un bloque de código o una función <b>una única vez<b> después de un retardo especificado en milisegundos. Devuelve un 'ID' numérico que puedes usar con <strong>clearTimeout()</strong> para cancelar la ejecución pendiente.",
     footerLinkInformation:
       "https://developer.mozilla.org/es/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout",
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
-    section: "Asincronismo Básico",
+    section: "DOM y BOM",
     order: 37,
   },
   {
     id: "js-async-setinterval",
-    colClasses: "col-md-6 col-lg-4",
+    colClasses: "col-md-6",
     headerIcon: "⏰",
     headerTitle: "setInterval()",
     codeLanguage: "javascript",
@@ -1366,13 +1366,13 @@ const intervalId = setInterval(() => {
 console.log("setInterval programado.");`,
     bodyContent: null,
     bodyText:
-      "La función `setInterval()` ejecuta un bloque de código o una función **repetidamente** cada cierto intervalo de tiempo en milisegundos. Devuelve un `ID` numérico que debes usar con `clearInterval()` para detener la ejecución repetida y evitar fugas de memoria.",
+      "El método <strong>setInterval()</strong> del objeto window, ejecuta un bloque de código o una función <b>>repetidamente<b> cada cierto intervalo de tiempo en milisegundos. Devuelve un 'ID' numérico que debes usar con <strong>clearInterval()<'/strong> para detener la ejecución repetida y evitar fugas de memoria.",
     footerLinkInformation:
       "https://developer.mozilla.org/es/docs/Web/API/WindowOrWorkerGlobalScope/setInterval",
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
-    section: "Asincronismo Básico",
+    section: "DOM y BOM",
     order: 38,
   },
   // --- Objeto Date ---
@@ -1380,7 +1380,7 @@ console.log("setInterval programado.");`,
     id: "js-date-creacion",
     colClasses: "col-md-6 col-lg-4",
     headerIcon: "📅",
-    headerTitle: "Creación de Fechas (Date)",
+    headerTitle: "Creación de Fechas",
     codeLanguage: "javascript",
     codeSnippet: `// 1. Fecha actual (sin argumentos)
 const now = new Date();
@@ -1409,7 +1409,7 @@ const tenSecondsLater = new Date(10 * 1000); // 10 segundos después del 1 de en
 console.log(tenSecondsLater); // Salida: Wed Dec 31 1969 21:00:10 GMT-0300 (Argentina Standard Time)`,
     bodyContent: null,
     bodyText:
-      "El objeto `Date` permite trabajar con fechas y horas. Se puede crear una fecha actual, a partir de una cadena de texto, especificando componentes numéricos (recordando que los meses son base 0) o a partir de un timestamp.",
+      "El objeto <strong>Date</strong> permite trabajar con fechas y horas. Se puede crear una fecha actual, a partir de una cadena de texto, especificando componentes numéricos (recordando que los meses son base 0) o a partir de un timestamp.",
     footerLinkInformation:
       "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date",
     footerLinkDemo: null,
@@ -1448,7 +1448,7 @@ console.log(d.getUTCSeconds());
 console.log(d.getUTCMilliseconds());`,
     bodyContent: null,
     bodyText:
-      "Los métodos `get*()` permiten extraer los componentes individuales de una fecha, tanto en la zona horaria local del usuario como en UTC. Recuerda que `getMonth()` devuelve un valor de 0 a 11 y `getDay()` de 0 a 6 (Domingo a Sábado).",
+      "Los métodos <strong>get*()</strong> permiten extraer los componentes individuales de una fecha, tanto en la zona horaria local del usuario como en UTC. Recuerda que <strong>getMonth()</strong> devuelve un valor de 0 a 11 y <strong>getDay()</strong> de 0 a 6 (Domingo a Sábado).",
     footerLinkInformation:
       "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear",
     footerLinkDemo: null,
@@ -1486,7 +1486,7 @@ resetDate.setTime(0); // Volver al Epoch Unix
 console.log(resetDate); // Salida: Wed Dec 31 1969 21:00:00 GMT-0300 (ajustado a zona horaria local)`,
     bodyContent: null,
     bodyText:
-      "Los métodos `set*()` permiten modificar los componentes de una fecha existente. Estos métodos mutan el objeto `Date` original. Al igual que los `get*()`, existen sus equivalentes `setUTC*()` para modificar en UTC.",
+      "Los métodos <strong>set*()</strong> permiten modificar los componentes de una fecha existente. Estos métodos mutan el objeto <strong>Date</strong> original. Al igual que los <strong>get*()</strong>, existen sus equivalentes <strong>setUTC*()</strong> para modificar en UTC.",
     footerLinkInformation:
       "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/setFullYear",
     footerLinkDemo: null,
@@ -1507,7 +1507,6 @@ console.log(resetDate); // Salida: Wed Dec 31 1969 21:00:00 GMT-0300 (ajustado a
 console.log(d.toString());     // "Thu Jul 18 2025 11:11:38 GMT-0300 (Argentina Standard Time)"
 console.log(d.toDateString()); // "Thu Jul 18 2025"
 console.log(d.toTimeString()); // "11:11:38 GMT-0300 (Argentina Standard Time)"
-
 // Formato ISO
 console.log(d.toISOString());  // "2025-07-18T14:11:38.XXXZ" (UTC)
 
@@ -1517,9 +1516,23 @@ console.log(d.toLocaleDateString()); // "18/7/2025"
 console.log(d.toLocaleTimeString()); // "11:11:38"
 
 // Opciones de formato con toLocaleString (más control)
+/* valores posibles de optionDate:
+weekday: long' (ej. "lunes") | 'short' (ej. "lun") | 'narrow' (ej. "L")| 
+year: 'numeric' (ej. "2023") | '2-digit' (ej. "23")
+month: 'numeric' (ej. "1") | '2-digit' (ej. "01") | 'long' (ej. "enero") | 'short' (ej. "ene") | 'narrow' (ej. "E")
+day: 'numeric' (ej. "3") | '2-digit' (ej. "03")
+era (solo algunos idiomas): 'long' (ej. "antes de Cristo") | 'short' (ej. "a.C.") | 'narrow' (ej. "a.C.")
+*/
 const optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 console.log(d.toLocaleDateString('es-AR', optionsDate)); // "jueves, 18 de julio de 2025"
-
+/*
+valores posibles de optionTime:
+hour: 'numeric' (ej. "3") | '2-digit' (ej. "03") | 
+minute, second: Mismas opciones que hour
+fractionalSecondDigits: 1 (ej. "1" para 100ms) | 2 (ej. "12" para 120ms) | 3 (ej. "123" para 123ms)
+hour12: true (formato 12h con AM/PM) | false (formato 24h)
+timeZoneName: 'long' (ej. "Hora de verano de Europa central") | 'short' (ej. "GMT+2") | 'shortOffset' (ej. "GMT+2") | 'longOffset' (ej. "GMT+02:00") | 'shortGeneric' (ej. "Hora de Europa central") | 'longGeneric' (ej. "Hora de Europa central")
+*/
 const optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
 console.log(d.toLocaleTimeString('es-AR', optionsTime)); // "11:11:38"
 
@@ -1529,7 +1542,7 @@ const optionsDateTime = { year: 'numeric', month: 'numeric', day: 'numeric',
 console.log(d.toLocaleString('es-AR', optionsDateTime)); // "18/7/2025, 11:11:38 GMT-3"`,
     bodyContent: null,
     bodyText:
-      "JavaScript ofrece varios métodos para formatear objetos `Date` en cadenas de texto. Los métodos `to*String()` proporcionan formatos predeterminados. Para un control más preciso sobre el idioma, el estilo y la zona horaria, se recomienda `toLocaleString()`, `toLocaleDateString()` y `toLocaleTimeString()`.",
+      "JavaScript ofrece varios métodos para formatear objetos <strong>Date</strong> en cadenas de texto. Para un control más preciso sobre el idioma, el estilo y la zona horaria, se recomienda <strong>toLocaleString()</strong>, <strong>toLocaleDateString()</strong> y <strong>toLocaleTimeString()</strong>.",
     footerLinkInformation:
       "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString",
     footerLinkDemo: null,
@@ -1580,7 +1593,7 @@ console.log(Date.now()); // Milisegundos actuales desde el Epoch Unix
 console.log(Date.parse("2025-07-18")); // Parsea una cadena y devuelve milisegundos`,
     bodyContent: null,
     bodyText:
-      "Las fechas se pueden comparar y manipular. La resta de dos objetos `Date` devuelve la diferencia en milisegundos, permitiendo calcular diferencias en otras unidades. Los métodos `set*()` también son útiles para sumar o restar tiempo, y `Date.now()` es práctico para obtener el timestamp actual.",
+      "Las fechas se pueden comparar y manipular. La resta de dos objetos <strong>Date</strong> devuelve la diferencia en milisegundos, permitiendo calcular diferencias en otras unidades. Los métodos <b>>set*()<b> también son útiles para sumar o restar tiempo, y <strong>Date.now()</strong> es práctico para obtener el timestamp actual.",
     footerLinkInformation:
       "https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime",
     footerLinkDemo: null,
@@ -1589,8 +1602,6 @@ console.log(Date.parse("2025-07-18")); // Parsea una cadena y devuelve milisegun
     section: "Objeto Date",
     order: 43,
   },
-
-
   // --- JSON ---
   {
     id: "js-json",
@@ -1628,7 +1639,103 @@ console.log(nuevoJsonString);
     footerLinkDemo: null,
     footerPreview: null,
     footerVideo: null,
-    section: "JSON",
+    section: "JSON y Web Storage",
     order: 44,
+  },
+  // --- Web Storage (localStorage y sessionStorage) ---
+  {
+    id: "js-webstorage-localstorage",
+    colClasses: "col-md-6",
+    headerIcon: "💾",
+    headerTitle: "Web Storage: localStorage",
+    codeLanguage: "javascript",
+    codeSnippet: `// Guardar datos (clave-valor)
+localStorage.setItem('username', 'Alice');
+localStorage.setItem('user_id', '12345');
+localStorage.setItem('isLoggedIn', 'true'); // Los valores se guardan como cadenas
+
+// Recuperar datos
+const username = localStorage.getItem('username');
+console.log('Usuario:', username); // Salida: Alice
+
+const userId = localStorage.getItem('user_id');
+console.log('ID de usuario (como cadena):', userId); // Salida: 12345
+
+// Guardar objetos complejos (necesita JSON.stringify)
+const userProfile = { name: 'Bob', email: 'bob@example.com', theme: 'dark' };
+localStorage.setItem('profile', JSON.stringify(userProfile));
+
+// Recuperar y parsear objetos
+const storedProfile = JSON.parse(localStorage.getItem('profile'));
+console.log('Perfil de usuario:', storedProfile); // Salida: { name: 'Bob', email: 'bob@example.com', theme: 'dark' }
+
+// Eliminar un elemento
+localStorage.removeItem('user_id');
+console.log('user_id después de eliminar:', localStorage.getItem('user_id')); // Salida: null
+
+// Limpiar todo el localStorage
+// localStorage.clear(); // ¡Usar con precaución! Borra todo en el dominio
+// console.log('LocalStorage después de clear:', localStorage.length); // Salida: 0
+
+// Acceder a claves por índice (útil para iterar)
+console.log('Número de elementos en localStorage:', localStorage.length);
+for (let i = 0; i < localStorage.length; i++) {
+  const key = localStorage.key(i);
+  console.log(\`Clave: \${key}, Valor: \${localStorage.getItem(key)}\`);
+}`,
+    bodyContent: null,
+    bodyText:
+      `El <strong>localStorage</strong> permite almacenar datos de tipo clave/valor en el navegador <b>sin fecha de expiración</b>. Los datos persisten incluso después de cerrar el navegador. <br>
+      💡 Es ideal para guardar configuraciones de usuario, tokens de sesión o datos que no cambian con frecuencia. Ten en cuenta que solo almacena cadenas de texto; para guardar objetos, necesitas convertirlos a JSON con <strong>JSON.stringify()</strong>.`,
+    footerLinkInformation:
+      "https://developer.mozilla.org/es/docs/Web/API/Window/localStorage",
+    footerLinkDemo: null,
+    footerPreview: null,
+    footerVideo: null,
+    section: "JSON y Web Storage",
+    order: 45,
+  },
+  {
+    id: "js-webstorage-sessionstorage",
+    colClasses: "col-md-6",
+    headerIcon: "🚪",
+    headerTitle: "Web Storage: sessionStorage",
+    codeLanguage: "javascript",
+    codeSnippet: `// Guardar datos (clave-valor)
+sessionStorage.setItem('current_page', '/dashboard');
+sessionStorage.setItem('temp_data', 'información temporal de la sesión');
+
+// Recuperar datos
+const currentPage = sessionStorage.getItem('current_page');
+console.log('Página actual:', currentPage); // Salida: /dashboard
+
+// Guardar y recuperar objetos (igual que localStorage)
+const sessionSettings = { zoom: 1.2, filter: 'active' };
+sessionStorage.setItem('settings', JSON.stringify(sessionSettings));
+const retrievedSettings = JSON.parse(sessionStorage.getItem('settings'));
+console.log('Configuración de sesión:', retrievedSettings);
+
+// Eliminar un elemento
+sessionStorage.removeItem('temp_data');
+console.log('temp_data después de eliminar:', sessionStorage.getItem('temp_data')); // Salida: null
+
+// Limpiar todo el sessionStorage
+// sessionStorage.clear(); // ¡Borra todo para la sesión actual!
+
+// Diferencia clave con localStorage:
+// Si cierras la pestaña o el navegador, los datos de sessionStorage se pierden.
+// Si abres una nueva pestaña o ventana, se crea un nuevo sessionStorage.
+// Recargar la página en la misma pestaña mantiene los datos.`,
+    bodyContent: null,
+    bodyText:
+      `El <strong>sessionStorage</strong> funciona de manera similar a <strong>localStorage</strong>, pero los datos almacenados 'solo persisten durante la vida de la sesión del navegador' (mientras la pestaña o ventana estén abiertas). Al cerrar la pestaña o el navegador, los datos se eliminan automáticamente.<br>
+      💡 Es ideal para almacenar datos temporales que no necesitan persistir entre sesiones, como información de formularios a medio rellenar o estados de UI específicos de la sesión actual.`,
+    footerLinkInformation:
+      "https://developer.mozilla.org/es/docs/Web/API/Window/sessionStorage",
+    footerLinkDemo: null,
+    footerPreview: null,
+    footerVideo: null,
+    section: "JSON y Web Storage",
+    order: 46,
   },
 ];
