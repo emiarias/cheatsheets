@@ -1241,76 +1241,76 @@ window.scrollBy(0, 100); // Scroll 100px desde la posición actual`,
     section: "DOM y BOM",
     order: 36,
   },
-//   {
-//     id: "js-bom-navigator-screen",
-//     colClasses: "col-md-6",
-//     headerIcon: "🖥️",
-//     headerTitle: "Objetos Navigator y Screen (BOM)",
-//     codeLanguage: "javascript",
-//     codeSnippet: `// Objeto Navigator: información del navegador
-// console.log(navigator.userAgent);     // Cadena User-Agent del navegador
-// console.log(navigator.platform);      // Plataforma del navegador (e.g., "Win32", "MacIntel")
-// console.log(navigator.cookieEnabled); // true si las cookies están habilitadas
-// console.log(navigator.onLine);        // true si el navegador está online
+  //   {
+  //     id: "js-bom-navigator-screen",
+  //     colClasses: "col-md-6",
+  //     headerIcon: "🖥️",
+  //     headerTitle: "Objetos Navigator y Screen (BOM)",
+  //     codeLanguage: "javascript",
+  //     codeSnippet: `// Objeto Navigator: información del navegador
+  // console.log(navigator.userAgent);     // Cadena User-Agent del navegador
+  // console.log(navigator.platform);      // Plataforma del navegador (e.g., "Win32", "MacIntel")
+  // console.log(navigator.cookieEnabled); // true si las cookies están habilitadas
+  // console.log(navigator.onLine);        // true si el navegador está online
 
-// // Objeto Screen: información de la pantalla del usuario
-// console.log(screen.width);         // Ancho total de la pantalla en píxeles
-// console.log(screen.height);        // Altura total de la pantalla en píxeles
-// console.log(screen.availWidth);    // Ancho disponible para la ventana (excluyendo barras de tareas)
-// console.log(screen.availHeight);   // Altura disponible para la ventana`,
-//     bodyContent: null,
-//     bodyText:
-//       "El objeto <strong>Navigator</strong> proporciona información sobre el navegador del usuario (nombre, versión, plataforma, etc.). El objeto <strong>Screen</strong> contiene información sobre la pantalla del usuario, como sus dimensiones y profundidad de color. Son útiles para la detección de características o análisis.",
-//     footerLinkInformation:
-//       "https://developer.mozilla.org/es/docs/Web/API/Navigator",
-//     footerLinkDemo: null,
-//     footerPreview: null,
-//     footerVideo: null,
-//     section: "DOM y BOM",
-//     order: 37,
-//   },
-//   {
-//     id: "js-bom-history-location",
-//     colClasses: "col-md-6",
-//     headerIcon: "📍",
-//     headerTitle: "Objetos History y Location (BOM)",
-//     codeLanguage: "javascript",
-//     codeSnippet: `// Objeto Location: información y control de la URL actual
-// console.log(location.href);     // URL completa
-// console.log(location.protocol); // Protocolo (ej: "http:", "https:")
-// console.log(location.host);     // Nombre del host y puerto
-// console.log(location.pathname); // Ruta del archivo
-// console.log(location.search);   // Cadena de consulta (query string)
-// console.log(location.hash);     // Fragmento (hash)
+  // // Objeto Screen: información de la pantalla del usuario
+  // console.log(screen.width);         // Ancho total de la pantalla en píxeles
+  // console.log(screen.height);        // Altura total de la pantalla en píxeles
+  // console.log(screen.availWidth);    // Ancho disponible para la ventana (excluyendo barras de tareas)
+  // console.log(screen.availHeight);   // Altura disponible para la ventana`,
+  //     bodyContent: null,
+  //     bodyText:
+  //       "El objeto <strong>Navigator</strong> proporciona información sobre el navegador del usuario (nombre, versión, plataforma, etc.). El objeto <strong>Screen</strong> contiene información sobre la pantalla del usuario, como sus dimensiones y profundidad de color. Son útiles para la detección de características o análisis.",
+  //     footerLinkInformation:
+  //       "https://developer.mozilla.org/es/docs/Web/API/Navigator",
+  //     footerLinkDemo: null,
+  //     footerPreview: null,
+  //     footerVideo: null,
+  //     section: "DOM y BOM",
+  //     order: 37,
+  //   },
+  //   {
+  //     id: "js-bom-history-location",
+  //     colClasses: "col-md-6",
+  //     headerIcon: "📍",
+  //     headerTitle: "Objetos History y Location (BOM)",
+  //     codeLanguage: "javascript",
+  //     codeSnippet: `// Objeto Location: información y control de la URL actual
+  // console.log(location.href);     // URL completa
+  // console.log(location.protocol); // Protocolo (ej: "http:", "https:")
+  // console.log(location.host);     // Nombre del host y puerto
+  // console.log(location.pathname); // Ruta del archivo
+  // console.log(location.search);   // Cadena de consulta (query string)
+  // console.log(location.hash);     // Fragmento (hash)
 
-// // Modificar URL (provoca navegación)
-// location.href = "nueva_pagina.html"; // Redireccionar
-// location.reload(); // Recargar la página actual
+  // // Modificar URL (provoca navegación)
+  // location.href = "nueva_pagina.html"; // Redireccionar
+  // location.reload(); // Recargar la página actual
 
-// // Objeto History: historial de navegación de la sesión
-// history.back();    // Navegar a la página anterior en el historial
-// history.forward(); // Navegar a la página siguiente
-// history.go(-2);    // Ir dos páginas atrás
-// console.log(history.length); // Número de entradas en el historial
+  // // Objeto History: historial de navegación de la sesión
+  // history.back();    // Navegar a la página anterior en el historial
+  // history.forward(); // Navegar a la página siguiente
+  // history.go(-2);    // Ir dos páginas atrás
+  // console.log(history.length); // Número de entradas en el historial
 
-// // history.pushState() y history.replaceState() para manipular el historial
-// // Útil en SPAs (Single Page Applications) para cambiar la URL sin recargar
-// history.pushState({ page: 1 }, "Título página 1", "/pagina1");
-// console.log(location.pathname); // Salida: /pagina1
-// history.replaceState({ page: 2 }, "Título página 2", "/pagina2");
-// console.log(location.pathname); // Salida: /pagina2`,
-//     bodyContent: null,
-//     bodyText:
-//       "El objeto <strong>Location</strong> permite acceder a la URL actual del documento y navegar a otras URLs. El objeto <strong>History</strong> permite acceder al historial de navegación de la ventana. Ambos son fundamentales para la navegación y la manipulación de la URL en aplicaciones web.",
-//     footerLinkInformation:
-//       "https://developer.mozilla.org/es/docs/Web/API/Location",
-//     footerLinkDemo: null,
-//     footerPreview: null,
-//     footerVideo: null,
-//     section: "DOM y BOM",
-//     order: 38,
-//   },
-// --- Asincronismo Básico (Timers) ---
+  // // history.pushState() y history.replaceState() para manipular el historial
+  // // Útil en SPAs (Single Page Applications) para cambiar la URL sin recargar
+  // history.pushState({ page: 1 }, "Título página 1", "/pagina1");
+  // console.log(location.pathname); // Salida: /pagina1
+  // history.replaceState({ page: 2 }, "Título página 2", "/pagina2");
+  // console.log(location.pathname); // Salida: /pagina2`,
+  //     bodyContent: null,
+  //     bodyText:
+  //       "El objeto <strong>Location</strong> permite acceder a la URL actual del documento y navegar a otras URLs. El objeto <strong>History</strong> permite acceder al historial de navegación de la ventana. Ambos son fundamentales para la navegación y la manipulación de la URL en aplicaciones web.",
+  //     footerLinkInformation:
+  //       "https://developer.mozilla.org/es/docs/Web/API/Location",
+  //     footerLinkDemo: null,
+  //     footerPreview: null,
+  //     footerVideo: null,
+  //     section: "DOM y BOM",
+  //     order: 38,
+  //   },
+  // --- Asincronismo Básico (Timers) ---
   {
     id: "js-async-settimeout",
     colClasses: "col-md-6",
@@ -1684,8 +1684,7 @@ for (let i = 0; i < localStorage.length; i++) {
   console.log(\`Clave: \${key}, Valor: \${localStorage.getItem(key)}\`);
 }`,
     bodyContent: null,
-    bodyText:
-      `El <strong>localStorage</strong> permite almacenar datos de tipo clave/valor en el navegador <b>sin fecha de expiración</b>. Los datos persisten incluso después de cerrar el navegador. <br>
+    bodyText: `El <strong>localStorage</strong> permite almacenar datos de tipo clave/valor en el navegador <b>sin fecha de expiración</b>. Los datos persisten incluso después de cerrar el navegador. <br>
       💡 Es ideal para guardar configuraciones de usuario, tokens de sesión o datos que no cambian con frecuencia. Ten en cuenta que solo almacena cadenas de texto; para guardar objetos, necesitas convertirlos a JSON con <strong>JSON.stringify()</strong>.`,
     footerLinkInformation:
       "https://developer.mozilla.org/es/docs/Web/API/Window/localStorage",
@@ -1727,8 +1726,7 @@ console.log('temp_data después de eliminar:', sessionStorage.getItem('temp_data
 // Si abres una nueva pestaña o ventana, se crea un nuevo sessionStorage.
 // Recargar la página en la misma pestaña mantiene los datos.`,
     bodyContent: null,
-    bodyText:
-      `El <strong>sessionStorage</strong> funciona de manera similar a <strong>localStorage</strong>, pero los datos almacenados 'solo persisten durante la vida de la sesión del navegador' (mientras la pestaña o ventana estén abiertas). Al cerrar la pestaña o el navegador, los datos se eliminan automáticamente.<br>
+    bodyText: `El <strong>sessionStorage</strong> funciona de manera similar a <strong>localStorage</strong>, pero los datos almacenados 'solo persisten durante la vida de la sesión del navegador' (mientras la pestaña o ventana estén abiertas). Al cerrar la pestaña o el navegador, los datos se eliminan automáticamente.<br>
       💡 Es ideal para almacenar datos temporales que no necesitan persistir entre sesiones, como información de formularios a medio rellenar o estados de UI específicos de la sesión actual.`,
     footerLinkInformation:
       "https://developer.mozilla.org/es/docs/Web/API/Window/sessionStorage",
