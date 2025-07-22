@@ -181,6 +181,9 @@ main {
 .bg-orange {
   background: linear-gradient(to bottom, #f19029, #f47e1f);
 }
+.bg-orange-new {
+  background: linear-gradient(to bottom, #eea85d, #f69648);
+}
 .bg-blue {
   background: linear-gradient(135deg, #5898dd, #0056b3);
 }
@@ -209,6 +212,7 @@ main {
 .card-logo {
   width: 200px;
   max-height: 100px;
+  object-fit: contain;
 }
 
 .link-card-logo {
